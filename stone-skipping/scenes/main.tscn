@@ -1,3 +1,38 @@
-[gd_scene format=3 uid="uid://nfhf0unrgqo"]
+[gd_scene load_steps=7 format=3 uid="uid://nfhf0unrgqo"]
+
+[ext_resource type="Shader" uid="uid://7qm3pvjcl5f6" path="res://shaders/water.gdshader" id="1_o5qli"]
+[ext_resource type="Texture2D" uid="uid://crpr17afb00jr" path="res://textures/cartoon_water.png" id="2_0wfyh"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sugp2"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_sgp6g"]
+material = SubResource("StandardMaterial3D_sugp2")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0wfyh"]
+render_priority = 0
+shader = ExtResource("1_o5qli")
+shader_parameter/slide_speed = 0.01
+shader_parameter/wobble_speed = 0.001
+shader_parameter/wobble_intensity = 0.4
+shader_parameter/texture_scale = 2.0
+shader_parameter/water = ExtResource("2_0wfyh")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_o5qli"]
+size = Vector3(1, 0.01, 1)
 
 [node name="Main" type="Node3D"]
+
+[node name="Water" type="StaticBody3D" parent="."]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Water"]
+mesh = SubResource("PlaneMesh_sgp6g")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_0wfyh")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Water"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -0.007406092, 0)
+shape = SubResource("BoxShape3D_o5qli")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.5813384, 15.174538)
