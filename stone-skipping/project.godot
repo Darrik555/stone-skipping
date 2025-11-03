@@ -14,3 +14,7 @@ config/name="stone-skipping"
 run/main_scene="uid://nfhf0unrgqo"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
+
+[global_group]
+
+stone=""

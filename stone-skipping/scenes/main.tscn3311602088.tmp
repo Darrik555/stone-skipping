@@ -1,6 +1,5 @@
-[gd_scene load_steps=19 format=4 uid="uid://nfhf0unrgqo"]
+[gd_scene load_steps=18 format=4 uid="uid://nfhf0unrgqo"]
 
-[ext_resource type="Script" uid="uid://8c014foyg52g" path="res://scenes/Water/water_detector.gd" id="1_jyhfs"]
 [ext_resource type="Shader" uid="uid://7qm3pvjcl5f6" path="res://shaders/water.gdshader" id="1_o5qli"]
 [ext_resource type="Texture2D" uid="uid://crpr17afb00jr" path="res://textures/cartoon_water.png" id="2_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://o0p7ive0n0yo" path="res://scenes/Stone/Stone.tscn" id="3_sugp2"]
@@ -9,7 +8,6 @@
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_sgp6g"]
 material = SubResource("StandardMaterial3D_sugp2")
-size = Vector2(8, 8)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0wfyh"]
 render_priority = 0
@@ -21,7 +19,7 @@ shader_parameter/texture_scale = 2.0
 shader_parameter/water = ExtResource("2_0wfyh")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_o5qli"]
-size = Vector3(8, 0.01, 8)
+size = Vector3(1, 0.01, 1)
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0wfyh"]
 sky_top_color = Color(0.38431373, 0.45490196, 0.69803923, 1)
@@ -249,27 +247,27 @@ _data = {
 
 [node name="Main" type="Node3D"]
 
-[node name="Water" type="Area3D" parent="." groups=["stone"]]
+[node name="Water" type="StaticBody3D" parent="."]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
-script = ExtResource("1_jyhfs")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Water"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.004809952, -3.8146973e-07, -0.00015583039)
 mesh = SubResource("PlaneMesh_sgp6g")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("ShaderMaterial_0wfyh")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Water"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.01, 0)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -0.007406092, 0)
 shape = SubResource("BoxShape3D_o5qli")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.01811556, 0, -0.9998359, 0, 1, 0, 0.9998359, 0, 0.01811556, -6.019257, 4.5813384, -0.49903107)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.5813384, 15.174538)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_jyhfs")
 
 [node name="arm" type="Node3D" parent="."]
-transform = Transform3D(-0.021064555, 0, -0.9997781, 0, 1, 0, 0.9997781, 0, -0.021064555, -4.6146913, 1.0276358, 0.15139389)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.609488, 1.0276358, 6.291309)
 
 [node name="Armature" type="Node3D" parent="arm"]
 transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0.16236258, 0.3779621, 6.0937896)
@@ -341,7 +339,5 @@ libraries = {
 &"": SubResource("AnimationLibrary_tbgi4")
 }
 
-[node name="Stone" parent="." groups=["stone"] instance=ExtResource("3_sugp2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1129122, 2.3556054, 2.4997098)
-
-[connection signal="body_entered" from="Water" to="Water" method="_on_body_entered"]
+[node name="Stone" parent="." instance=ExtResource("3_sugp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1129122, 0.23115805, 2.4997098)

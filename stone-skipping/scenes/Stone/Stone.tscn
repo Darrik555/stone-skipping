@@ -1,0 +1,34 @@
+[gd_scene load_steps=7 format=3 uid="uid://o0p7ive0n0yo"]
+
+[ext_resource type="Script" uid="uid://b34qudkehtjxj" path="res://scenes/Stone/stone_controller.gd" id="1_6dcfr"]
+[ext_resource type="ArrayMesh" uid="uid://dh3fyo3fsboqj" path="res://Stones/stones_Circle.res" id="1_i5bm8"]
+[ext_resource type="Script" uid="uid://pwmm4clupd7k" path="res://scenes/Stone/state_machine.gd" id="2_m47l4"]
+[ext_resource type="Script" uid="uid://c665ellk2mlib" path="res://scenes/Stone/Stone_Bounce.gd" id="4_l0ttt"]
+[ext_resource type="Script" uid="uid://dpwjayvjvtqcd" path="res://scenes/Stone/Stone_InAir.gd" id="5_w6vg2"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_floys"]
+height = 0.5
+radius = 1.0
+
+[node name="Stone" type="CharacterBody3D" groups=["stone"]]
+script = ExtResource("1_6dcfr")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.13309562, 0, 0.14429498)
+shape = SubResource("CylinderShape3D_floys")
+
+[node name="StonesCircle" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_i5bm8")
+skeleton = NodePath("../..")
+
+[node name="State Machine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
+script = ExtResource("2_m47l4")
+initial_state = NodePath("InAir")
+
+[node name="Bounce" type="Node" parent="State Machine"]
+script = ExtResource("4_l0ttt")
+metadata/_custom_type_script = "uid://c665ellk2mlib"
+
+[node name="InAir" type="Node" parent="State Machine"]
+script = ExtResource("5_w6vg2")
+metadata/_custom_type_script = "uid://dpwjayvjvtqcd"
