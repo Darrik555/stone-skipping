@@ -15,7 +15,6 @@ run/main_scene="uid://nfhf0unrgqo"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
-[layer_names]
+[global_group]
 
-3d_physics/layer_1="Water And Environment"
-3d_physics/layer_8="Stone"
+stone=""
