@@ -77,60 +77,6 @@ bind/6/name = &"Bone.005"
 bind/6/bone = -1
 bind/6/pose = Transform3D(0.40295637, -0.17801599, 0.8977397, 0.89560646, -0.12528148, -0.42684156, 0.18845472, 0.97602, 0.10894942, -0.36804342, -0.29454198, -0.44267413)
 
-[sub_resource type="Animation" id="Animation_0wfyh"]
-resource_name = "arm_throw"
-length = 2.0
-loop_mode = 1
-tracks/0/type = "rotation_3d"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("arm/Armature/Skeleton3D:Bone")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, 6.1708356e-08, -5.861371e-08, -0.043144204, 0.99906886, 0.7, 1, 3.7307593e-08, -7.649597e-08, -0.3898836, 0.9208641, 0.93333334, 1, 8.219398e-08, -2.2082553e-08, 0.43861803, 0.8986736)
-tracks/1/type = "rotation_3d"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("arm/Armature/Skeleton3D:Bone.001")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = PackedFloat32Array(0, 1, -0.021833701, 0.005379776, -0.2424419, 0.9699053, 0.0004411111, 1, -0.021843404, 0.0053402786, -0.24068725, 0.9703422, 0.7, 1, -0.011984242, 0.01902703, -0.84772116, 0.5299653, 0.93333334, 1, -0.021749498, 0.0057106726, -0.25714093, 0.96611226)
-tracks/2/type = "rotation_3d"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("arm/Armature/Skeleton3D:Bone.002")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = PackedFloat32Array(0, 1, 0.08335985, -0.001010495, -0.008262605, 0.99648476, 0.0004411111, 1, 0.08335961, -0.0010165592, -0.008420106, 0.9964835, 0.7, 1, 0.08038657, -0.010502385, -0.25534534, 0.9634451, 0.93333334, 1, 0.083373375, -0.00016761025, 0.0136244595, 0.9964252)
-tracks/3/type = "rotation_3d"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("arm/Armature/Skeleton3D:Bone.004")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = PackedFloat32Array(0, 1, -0.06998928, -0.001043865, -0.01713803, 0.9974, 0.0004411111, 1, -0.06998931, -0.0010468247, -0.017194983, 0.99739903, 0.7, 1, -0.06974636, -0.0057303184, -0.107321866, 0.99175835, 0.93333334, 1, -0.06974635, -0.0057303174, -0.10732184, 0.99175835)
-tracks/4/type = "rotation_3d"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("arm/Armature/Skeleton3D:Bone.006")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = PackedFloat32Array(0, 1, -0.038955376, -5.436268e-08, 0.02390501, 0.9989551, 0.0004411111, 1, -0.03895538, -5.430819e-08, 0.023905009, 0.998955, 0.7, 1, -0.038955376, -5.4335434e-08, 0.023905009, 0.998955, 0.93333334, 1, -0.038955376, -5.436268e-08, 0.02390501, 0.9989551)
-tracks/5/type = "rotation_3d"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("arm/Armature/Skeleton3D:Bone.003")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = PackedFloat32Array(0, 1, 0.016087813, -0.009751094, -0.8047799, 0.59327525, 0.0004411111, 1, 0.016087813, -0.009751094, -0.8047799, 0.59327525, 0.7, 1, 0.016087813, -0.009751094, -0.8047799, 0.59327525, 0.93333334, 1, 0.016087813, -0.009751094, -0.8047799, 0.59327525)
-tracks/6/type = "rotation_3d"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("arm/Armature/Skeleton3D:Bone.005")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = PackedFloat32Array(0, 1, -0.11406206, 4.1116225e-05, 0.349283, 0.93004906, 0.0004411111, 1, -0.11406206, 4.1112828e-05, 0.34928298, 0.93004906, 0.7, 1, -0.11406206, 4.1116225e-05, 0.349283, 0.93004906, 0.93333334, 1, -0.11406206, 4.1116225e-05, 0.349283, 0.93004906)
-
 [sub_resource type="Animation" id="Animation_sugp2"]
 length = 0.001
 tracks/0/type = "rotation_3d"
@@ -182,6 +128,60 @@ tracks/6/path = NodePath("arm/Armature/Skeleton3D:Bone.005")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = PackedFloat32Array(0, 1, -0.11406206, 4.1116225e-05, 0.349283, 0.93004906)
+
+[sub_resource type="Animation" id="Animation_0wfyh"]
+resource_name = "arm_throw"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("arm/Armature/Skeleton3D:Bone")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 6.1708356e-08, -5.861371e-08, -0.043144204, 0.99906886, 0.59999996, 1, 3.7307593e-08, -7.649597e-08, -0.3898836, 0.9208641, 0.8333333, 1, 8.219398e-08, -2.2082553e-08, 0.43861803, 0.8986736)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("arm/Armature/Skeleton3D:Bone.001")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, -0.021833701, 0.005379776, -0.2424419, 0.9699053, 0.0004411111, 1, -0.021843404, 0.0053402786, -0.24068725, 0.9703422, 0.59999996, 1, -0.011984242, 0.01902703, -0.84772116, 0.5299653, 0.8333333, 1, -0.021749498, 0.0057106726, -0.25714093, 0.96611226)
+tracks/2/type = "rotation_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("arm/Armature/Skeleton3D:Bone.002")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, 0.08335985, -0.001010495, -0.008262605, 0.99648476, 0.0004411111, 1, 0.08335961, -0.0010165592, -0.008420106, 0.9964835, 0.59999996, 1, 0.08038657, -0.010502385, -0.25534534, 0.9634451, 0.8333333, 1, 0.083373375, -0.00016761025, 0.0136244595, 0.9964252)
+tracks/3/type = "rotation_3d"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("arm/Armature/Skeleton3D:Bone.004")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = PackedFloat32Array(0, 1, -0.06998928, -0.001043865, -0.01713803, 0.9974, 0.0004411111, 1, -0.06998931, -0.0010468247, -0.017194983, 0.99739903, 0.59999996, 1, -0.06974636, -0.0057303184, -0.107321866, 0.99175835, 0.8333333, 1, -0.06974635, -0.0057303174, -0.10732184, 0.99175835)
+tracks/4/type = "rotation_3d"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("arm/Armature/Skeleton3D:Bone.006")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = PackedFloat32Array(0, 1, -0.038955376, -5.436268e-08, 0.02390501, 0.9989551, 0.0004411111, 1, -0.03895538, -5.430819e-08, 0.023905009, 0.998955, 0.59999996, 1, -0.038955376, -5.4335434e-08, 0.023905009, 0.998955, 0.8333333, 1, -0.038955376, -5.436268e-08, 0.02390501, 0.9989551)
+tracks/5/type = "rotation_3d"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("arm/Armature/Skeleton3D:Bone.003")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = PackedFloat32Array(0, 1, 0.016087813, -0.009751094, -0.8047799, 0.59327525, 0.0004411111, 1, 0.016087813, -0.009751094, -0.8047799, 0.59327525, 0.59999996, 1, 0.016087813, -0.009751094, -0.8047799, 0.59327525, 0.8333333, 1, 0.016087813, -0.009751094, -0.8047799, 0.59327525)
+tracks/6/type = "rotation_3d"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("arm/Armature/Skeleton3D:Bone.005")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = PackedFloat32Array(0, 1, -0.11406206, 4.1116225e-05, 0.349283, 0.93004906, 0.0004411111, 1, -0.11406206, 4.1112828e-05, 0.34928298, 0.93004906, 0.59999996, 1, -0.11406206, 4.1116225e-05, 0.349283, 0.93004906, 0.8333333, 1, -0.11406206, 4.1116225e-05, 0.349283, 0.93004906)
 
 [sub_resource type="Animation" id="Animation_jyhfs"]
 resource_name = "arm_throw_speed"
@@ -260,13 +260,13 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -0.007406092, 0)
 shape = SubResource("BoxShape3D_o5qli")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.5813384, 15.174538)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.5813384, 13.72411)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_jyhfs")
 
 [node name="arm" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.609488, 1.0276358, 6.291309)
+transform = Transform3D(0.33, 0, 0, 0, 0.33, 0, 0, 0, 0.33, -0.0066381693, 2.8513882, 11.29148)
 
 [node name="Armature" type="Node3D" parent="arm"]
 transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0.16236258, 0.3779621, 6.0937896)

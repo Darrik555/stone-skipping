@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://cgbpfphmc0n7r"]
+
+[ext_resource type="Script" uid="uid://d4lmyvxpgw1xg" path="res://stone.gd" id="1_tuldt"]
+[ext_resource type="ArrayMesh" uid="uid://l6kokqp7xi6f" path="res://Stones/stones_Cube_001.res" id="2_f651v"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6niw0"]
+size = Vector3(0.87719727, 0.23217773, 0.7282715)
+
+[node name="Stone" type="RigidBody3D"]
+collision_layer = 128
+script = ExtResource("1_tuldt")
+
+[node name="StoneMesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.33, 0, 0, 0, 0.33, 0, 0, 0, 0.33, 0, 0, 0)
+mesh = ExtResource("2_f651v")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06994629, -0.23962402, 0.007446289)
+shape = SubResource("BoxShape3D_6niw0")
