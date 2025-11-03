@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://o0p7ive0n0yo"]
+[gd_scene load_steps=8 format=3 uid="uid://o0p7ive0n0yo"]
 
 [ext_resource type="Script" uid="uid://b34qudkehtjxj" path="res://scenes/Stone/stone_controller.gd" id="1_6dcfr"]
 [ext_resource type="ArrayMesh" uid="uid://dh3fyo3fsboqj" path="res://Stones/stones_Circle.res" id="1_i5bm8"]
 [ext_resource type="Script" uid="uid://pwmm4clupd7k" path="res://scenes/Stone/state_machine.gd" id="2_m47l4"]
+[ext_resource type="Script" uid="uid://bswr33s48jv7n" path="res://scenes/Stone/follow_camera.gd" id="3_l0ttt"]
 [ext_resource type="Script" uid="uid://c665ellk2mlib" path="res://scenes/Stone/Stone_Bounce.gd" id="4_l0ttt"]
 [ext_resource type="Script" uid="uid://dpwjayvjvtqcd" path="res://scenes/Stone/Stone_InAir.gd" id="5_w6vg2"]
 
@@ -20,6 +21,12 @@ shape = SubResource("CylinderShape3D_floys")
 [node name="StonesCircle" type="MeshInstance3D" parent="."]
 mesh = ExtResource("1_i5bm8")
 skeleton = NodePath("../..")
+
+[node name="Camera3D" type="Camera3D" parent="." node_paths=PackedStringArray("target_node")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7879901, 2.374653)
+visible = false
+script = ExtResource("3_l0ttt")
+target_node = NodePath("..")
 
 [node name="State Machine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("2_m47l4")
