@@ -15,9 +15,9 @@ var collision : KinematicCollision3D
 
 func _ready():
 	#start speed
-	velocity = Vector3(25.0, 3.0, 0.0)
-	
+	#velocity = Vector3(25.0, 3.0, 0.0)
 	#maybe angle of throw
+	pass
 
 func _physics_process(_delta: float) -> void:
 	has_hit_water = false
@@ -30,8 +30,6 @@ func _physics_process(_delta: float) -> void:
 			collision = new_collision
 			notify_water_hit()
 			print("collision and water hit")
-		
-		
 
 func notify_water_hit():
 	if not is_sunk:
