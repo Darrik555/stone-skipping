@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://db57rtpebk5g4"]
+
+[ext_resource type="Shader" uid="uid://7qm3pvjcl5f6" path="res://shaders/water.gdshader" id="1_bdita"]
+[ext_resource type="Texture2D" uid="uid://crpr17afb00jr" path="res://textures/cartoon_water.png" id="2_05sbe"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_udjay"]
+size = Vector2(8, 8)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0b8yo"]
+render_priority = 0
+shader = ExtResource("1_bdita")
+shader_parameter/slide_speed = 0.01
+shader_parameter/wobble_speed = 0.001
+shader_parameter/wobble_intensity = 0.4
+shader_parameter/texture_scale = 2.0
+shader_parameter/water = ExtResource("2_05sbe")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wnpce"]
+size = Vector3(8, 0.114, 8)
+
+[node name="WaterCollision" type="StaticBody3D"]
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_udjay")
+surface_material_override/0 = SubResource("ShaderMaterial_0b8yo")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_wnpce")

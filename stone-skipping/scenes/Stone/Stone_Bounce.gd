@@ -18,11 +18,16 @@ func Enter():
 	var lift_force = horizontal_speed_sq * stone_controller.lift_factor * sin(angle)
 	
 	# Vertical velocity the actual skip
-	stone_controller.velocity.y = lift_force
+	#stone_controller.velocity.y = lift_force
+	
+	#bounce the velocity off of the (water plane) collision point
+	stone_controller.velocity = stone_controller.velocity.bounce(stone_controller.collision.get_normal())
 	
 	# energy loss
 	stone_controller.velocity.x *= (1.0 - stone_controller.friction_factor)
 	stone_controller.velocity.z *= (1.0 - stone_controller.friction_factor)
+	
+	
 	
 	print("Bounced")
 	Transitioned.emit(self,"InAir")

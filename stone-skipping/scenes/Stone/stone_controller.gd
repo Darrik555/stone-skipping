@@ -11,6 +11,8 @@ var has_hit_water: bool = false
 
 @onready var state_machine: Node = $"State Machine"
 
+var collision : KinematicCollision3D
+
 func _ready():
 	#start speed
 	velocity = Vector3(25.0, 3.0, 0.0)
@@ -18,11 +20,18 @@ func _ready():
 	#maybe angle of throw
 
 func _physics_process(_delta: float) -> void:
+	has_hit_water = false
 	state_machine._physics_process(_delta)
 	
 	if not is_sunk:
 		move_and_slide()
-		has_hit_water = false
+		var new_collision = move_and_collide(velocity * _delta,true)
+		if new_collision != null:
+			collision = new_collision
+			notify_water_hit()
+			print("collision and water hit")
+		
+		
 
 func notify_water_hit():
 	if not is_sunk:
@@ -32,4 +41,5 @@ func on_state_transition(new_state: String):
 	if new_state == "Sunk":
 		is_sunk = true
 		velocity = Vector3.ZERO
+		set_collision_mask_value(1,false)
 		print("stone sunk")

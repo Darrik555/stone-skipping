@@ -18,3 +18,8 @@ config/icon="res://icon.svg"
 [global_group]
 
 stone=""
+
+[layer_names]
+
+3d_physics/layer_1="Water&Environment"
+3d_physics/layer_8="SkippingStones"

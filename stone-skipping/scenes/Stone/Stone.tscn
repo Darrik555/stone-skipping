@@ -12,7 +12,10 @@ height = 0.5
 radius = 1.0
 
 [node name="Stone" type="CharacterBody3D" groups=["stone"]]
+collision_layer = 128
 script = ExtResource("1_6dcfr")
+drag = 0.0
+friction_factor = 0.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.13309562, 0, 0.14429498)
