@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="OceanFFTWaves" load_steps=3 format=3 uid="uid://d0nc3ubybbe6o"]
+
+[ext_resource type="Material" uid="uid://dy1iwmm5b777w" path="res://water/water_surface_material.tres" id="1_3fpa1"]
+[ext_resource type="Script" uid="uid://cx3twtm5gessr" path="res://water/fft_waves/components/fft_ocean.gd" id="2_vce14"]
+
+[resource]
+script = ExtResource("2_vce14")
+material = ExtResource("1_3fpa1")
+simulation_frameskip = 1
+heightmap_sync_frameskip = 2
+fft_resolution = 64
+time_scale = 0.6
+cascade_scales = Array[float]([3.23607, 1.61803, 0.5])
+planetary_curve_strength = null
+choppiness = 4.0
+metadata/_custom_type_script = "uid://cx3twtm5gessr"

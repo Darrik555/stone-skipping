@@ -49,6 +49,8 @@ func throw():
 	
 	stone.velocity = throw_power * throw_direction
 	stone.bounces = stone.max_bounces
+	stone.get_node("CollisionShape3D").disabled = false
+	stone.get_node("State Machine").reset()
 	
 	#reset stuff
 	progress_bar.value = 0.0

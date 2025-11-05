@@ -31,7 +31,7 @@ func _physics_process(_delta: float) -> void:
 		if new_collision != null:
 			collision = new_collision
 			notify_water_hit()
-			print("collision and water hit")
+			#print("collision and water hit")
 
 func notify_water_hit():
 	if not is_sunk:

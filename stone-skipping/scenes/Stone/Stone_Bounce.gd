@@ -36,14 +36,15 @@ func Enter():
 	
 	#decide termination
 	stone_controller.bounces -= 1
-	print("Bounced, bounces left: ",stone_controller.bounces)
+	#print("Bounced, bounces left: ",stone_controller.bounces)
 	if stone_controller.bounces <= 0:
 		Transitioned.emit(self,"Sunk")
 	else:
 		Transitioned.emit(self,"InAir")
 
 func Exit():
-	print("bounce exit")
+	#print("bounce exit")
+	pass
 
 func Physics_Update(_delta: float):
 	pass

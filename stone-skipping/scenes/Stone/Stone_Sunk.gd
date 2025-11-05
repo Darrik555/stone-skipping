@@ -13,9 +13,10 @@ func Enter():
 	
 	#start timer, despawn/reset
 	
-	print("Sunk")
+	#print("Sunk")
 
 func Exit():
+	#stone_controller.get_node("CollisionShape3D").disabled = false
 	print("Left Sunk (huh?)")
 
 func Physics_Update(_delta: float):

@@ -6,11 +6,12 @@ var stone_controller: CharacterBody3D
 func Enter():
 	if get_parent() and get_parent().get_parent():
 		stone_controller = get_parent().get_parent()
-	print("entered air")
+		stone_controller.get_node("CollisionShape3D").disabled = false
+	#print("entered air")
 
 func Exit():
-	print("left air")
-	
+	#print("left air")
+	pass
 
 func Physics_Update(_delta: float):
 	if not stone_controller or stone_controller.is_sunk:

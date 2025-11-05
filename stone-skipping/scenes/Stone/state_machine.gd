@@ -37,3 +37,8 @@ func on_child_transition(state, new_state_name):
 	current_state = new_state
 	new_state.Enter()
 	
+
+func reset():
+	if initial_state:
+		initial_state.Enter()
+		current_state = initial_state
