@@ -8,7 +8,7 @@ extends Node3D
 
 
 var throw_power : float = 0.0
-var throw_direction : Vector3 = Vector3(1,0.3,1)
+var throw_direction : Vector3 = Vector3(1,0.1,1)
 var charging : bool = true
 
 
@@ -38,11 +38,18 @@ func _process(_delta):
 	
 	if Input.is_action_just_released("leftclick"):
 		throw()
-	
 	pass
 
 func throw():
-	throw_direction = camera_3d.global_position.direction_to(stone.global_position)
-	throw_direction.y = -throw_direction.y
-	stone.velocity = throw_power * throw_direction
 	
+	throw_direction = camera_3d.global_position.direction_to(stone.global_position)
+	throw_direction.y = -throw_direction.y *0.2
+	
+	stone.global_position = global_position
+	
+	stone.velocity = throw_power * throw_direction
+	stone.bounces = stone.max_bounces
+	
+	#reset stuff
+	progress_bar.value = 0.0
+	throw_power = 0.0

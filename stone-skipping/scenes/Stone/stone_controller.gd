@@ -5,6 +5,8 @@ extends CharacterBody3D
 @export var lift_factor: float = 0.7
 @export var friction_factor: float = 0.2
 @export var sink_speed_threshold: float = 5.0
+@export var bounces : int = 10
+@export var max_bounces : int = 15
 
 var is_sunk: bool = false
 var has_hit_water: bool = false
@@ -24,8 +26,8 @@ func _physics_process(_delta: float) -> void:
 	state_machine._physics_process(_delta)
 	
 	if not is_sunk:
-		move_and_slide()
-		var new_collision = move_and_collide(velocity * _delta,true)
+		#move_and_slide()
+		var new_collision = move_and_collide(velocity * _delta)
 		if new_collision != null:
 			collision = new_collision
 			notify_water_hit()

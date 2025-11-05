@@ -274,7 +274,7 @@ target_node = NodePath("../Stone")
 environment = SubResource("Environment_jyhfs")
 
 [node name="arm" type="Node3D" parent="."]
-transform = Transform3D(-0.021064555, 0, -0.9997781, 0, 1, 0, 0.9997781, 0, -0.021064555, -372.24536, 1.0276358, -29.18716)
+transform = Transform3D(-0.021064555, 0, -0.9997781, 0, 1, 0, 0.9997781, 0, -0.021064555, -789.3614, 2.6874988, -29.18716)
 script = ExtResource("5_o6xl0")
 
 [node name="Armature" type="Node3D" parent="arm"]
@@ -348,7 +348,7 @@ libraries = {
 }
 
 [node name="Stone" parent="." instance=ExtResource("3_sugp2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1129122, 2.3556054, 2.4997098)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -786.536, 3.6450722, -32.78392)
 
 [node name="WaterCollision" parent="." instance=ExtResource("7_o6xl0")]
 collision_mask = 129
@@ -368,5 +368,6 @@ offset_bottom = -26.0
 grow_horizontal = 0
 grow_vertical = 0
 fill_mode = 3
+show_percentage = false
 
 [connection signal="body_entered" from="Water" to="Water" method="_on_body_entered"]

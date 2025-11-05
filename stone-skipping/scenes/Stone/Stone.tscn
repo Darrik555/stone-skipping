@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://o0p7ive0n0yo"]
+[gd_scene load_steps=9 format=3 uid="uid://o0p7ive0n0yo"]
 
 [ext_resource type="Script" uid="uid://b34qudkehtjxj" path="res://scenes/Stone/stone_controller.gd" id="1_6dcfr"]
 [ext_resource type="ArrayMesh" uid="uid://dh3fyo3fsboqj" path="res://Stones/stones_Circle.res" id="1_i5bm8"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://bswr33s48jv7n" path="res://scenes/Stone/follow_camera.gd" id="3_l0ttt"]
 [ext_resource type="Script" uid="uid://c665ellk2mlib" path="res://scenes/Stone/Stone_Bounce.gd" id="4_l0ttt"]
 [ext_resource type="Script" uid="uid://dpwjayvjvtqcd" path="res://scenes/Stone/Stone_InAir.gd" id="5_w6vg2"]
+[ext_resource type="Script" uid="uid://cxp5lkrnswp78" path="res://scenes/Stone/Stone_Sunk.gd" id="7_w6vg2"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_floys"]
 height = 0.5
@@ -14,8 +15,8 @@ radius = 1.0
 [node name="Stone" type="CharacterBody3D" groups=["stone"]]
 collision_layer = 128
 script = ExtResource("1_6dcfr")
-drag = 0.0
-friction_factor = 0.0
+drag = 0.001
+friction_factor = 0.1
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.13309562, 0, 0.14429498)
@@ -42,3 +43,6 @@ metadata/_custom_type_script = "uid://c665ellk2mlib"
 [node name="InAir" type="Node" parent="State Machine"]
 script = ExtResource("5_w6vg2")
 metadata/_custom_type_script = "uid://dpwjayvjvtqcd"
+
+[node name="Sunk" type="Node" parent="State Machine"]
+script = ExtResource("7_w6vg2")
