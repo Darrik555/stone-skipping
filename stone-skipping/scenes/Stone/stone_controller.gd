@@ -36,6 +36,8 @@ func _physics_process(_delta: float) -> void:
 func notify_water_hit():
 	if not is_sunk:
 		has_hit_water = true
+		#test ripple, position/radius/strength
+		$"../Ocean".add_ripple(global_position,1.0,2.0)
 
 func on_state_transition(new_state: String):
 	if new_state == "Sunk":

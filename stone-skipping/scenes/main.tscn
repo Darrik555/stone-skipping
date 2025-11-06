@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://bswr33s48jv7n" path="res://scenes/Stone/follow_camera.gd" id="4_tbgi4"]
 [ext_resource type="Script" uid="uid://c2a7jpk65njt1" path="res://arm/arm.gd" id="5_o6xl0"]
 [ext_resource type="ArrayMesh" uid="uid://l6kokqp7xi6f" path="res://Stones/stones_Cube_001.res" id="6_tefeu"]
-[ext_resource type="PackedScene" uid="uid://db57rtpebk5g4" path="res://scenes/water/water_collision.tscn" id="7_o6xl0"]
+[ext_resource type="PackedScene" uid="uid://db57rtpebk5g4" path="res://scenes/Water/water_collision.tscn" id="7_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://bjsu0bu5gjesp" path="res://water/ocean.tscn" id="7_tipki"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0wfyh"]
@@ -343,7 +343,7 @@ libraries = {
 }
 
 [node name="Stone" parent="." instance=ExtResource("3_sugp2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 17.013771, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.5718517, 0)
 
 [node name="WaterCollision" parent="." instance=ExtResource("7_o6xl0")]
 transform = Transform3D(200, 0, 0, 0, 200, 0, 0, 0, 200, 0, -0.5, 0)
@@ -368,4 +368,8 @@ show_percentage = false
 
 [node name="StonesCube001" type="MeshInstance3D" parent="."]
 transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 14.99712, 11.982663, 33.48115)
+mesh = ExtResource("6_tefeu")
+
+[node name="StonesCube002" type="MeshInstance3D" parent="."]
+transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 786.35657, 11.982663, -27.42101)
 mesh = ExtResource("6_tefeu")
