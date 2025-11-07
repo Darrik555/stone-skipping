@@ -28,6 +28,8 @@ func _physics_process(_delta: float) -> void:
 	if not is_sunk:
 		#move_and_slide()
 		var new_collision = move_and_collide(velocity * _delta)
+		#set player position in ocean, so offset of ripple etc., is updated
+		$"../Ocean".set_player_position(global_position)
 		if new_collision != null:
 			collision = new_collision
 			notify_water_hit()
