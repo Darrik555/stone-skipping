@@ -18,9 +18,9 @@ func Physics_Update(_delta: float):
 		return
 	
 	# Gravity and Air Drag
-	stone_controller.velocity.y -= stone_controller.gravity * _delta
+	stone_controller.velocity.y -= stone_controller.stats.gravity * _delta
 	
-	var drag = -stone_controller.velocity.normalized() * stone_controller.velocity.length_squared() * stone_controller.drag * _delta
+	var drag = -stone_controller.velocity.normalized() * stone_controller.velocity.length_squared() * stone_controller.stats.drag * _delta
 	stone_controller.velocity += drag
 	
 	if stone_controller.has_hit_water:

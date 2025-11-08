@@ -22,5 +22,5 @@ func Exit():
 
 func Physics_Update(_delta: float):
 	
-	stone_controller.velocity.y -= stone_controller.gravity * _delta
+	stone_controller.velocity.y -= stone_controller.stats.gravity * _delta
 	pass

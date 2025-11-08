@@ -2,20 +2,21 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://j8jk3g28gk07"
-path="res://.godot/imported/island_water_mask.png-77c84bc138a57d5786b586f0958faaa7.ctex"
+uid="uid://crpr17afb00jr"
+path.s3tc="res://.godot/imported/cartoon_water.png-fadacab0941b5f62731ee8e7703bd9ac.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
-source_file="res://environment/levels/island/island_water_mask.png"
-dest_files=["res://.godot/imported/island_water_mask.png-77c84bc138a57d5786b586f0958faaa7.ctex"]
+source_file="res://Art/Environment/textures/cartoon_water.png"
+dest_files=["res://.godot/imported/cartoon_water.png-fadacab0941b5f62731ee8e7703bd9ac.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -23,7 +24,7 @@ compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=false
+mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -37,4 +38,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0

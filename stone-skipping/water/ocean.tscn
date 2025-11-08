@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bjam4rsotep6l" path="res://water/ocean.gd" id="1_4xaps"]
 [ext_resource type="Resource" uid="uid://d0nc3ubybbe6o" path="res://water/ocean_settings.tres" id="2_6vxhw"]
-[ext_resource type="Texture2D" uid="uid://j8jk3g28gk07" path="res://environment/levels/island/island_water_mask.png" id="2_m7ah3"]
+[ext_resource type="Texture2D" uid="uid://j8jk3g28gk07" path="res://Art/Environment/levels/island/island_water_mask.png" id="2_m7ah3"]
 [ext_resource type="Material" uid="uid://dy1iwmm5b777w" path="res://water/water_surface_material.tres" id="5_2g7bk"]
 [ext_resource type="Script" uid="uid://sshwjxnsyesl" path="res://water/waves/water_waves.gd" id="5_m7ah3"]
 [ext_resource type="Script" uid="uid://dbr6tcmdp4mbi" path="res://water/waves/water_foam.gd" id="7_hkljq"]
