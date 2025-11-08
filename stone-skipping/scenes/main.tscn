@@ -8,8 +8,11 @@
 [ext_resource type="PackedScene" uid="uid://bjsu0bu5gjesp" path="res://water/ocean.tscn" id="7_tipki"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0wfyh"]
-sky_top_color = Color(0.38431373, 0.45490196, 0.69803923, 1)
-sky_horizon_color = Color(0.64705884, 0.654902, 0.75686276, 1)
+sky_top_color = Color(0.46720594, 0.54082817, 0.8862413, 1)
+sky_horizon_color = Color(0.5882353, 0.6666667, 0.79607844, 1)
+sky_curve = 0.056839403
+ground_bottom_color = Color(0.06350352, 0.11434471, 0.2943112, 1)
+ground_curve = 0.007578558
 
 [sub_resource type="Sky" id="Sky_sugp2"]
 sky_material = SubResource("ProceduralSkyMaterial_0wfyh")
@@ -269,7 +272,7 @@ script = ExtResource("4_tbgi4")
 target_node = NodePath("../Stone")
 
 [node name="arm" type="Node3D" parent="."]
-transform = Transform3D(-0.021064555, 0, -0.9997781, 0, 1, 0, 0.9997781, 0, -0.021064555, 0, 1, 0)
+transform = Transform3D(-4.3711385e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, -4.3711385e-08, 0, 1, 0)
 script = ExtResource("5_o6xl0")
 
 [node name="Armature" type="Node3D" parent="arm"]
@@ -341,9 +344,11 @@ metadata/extras = {
 libraries = {
 &"": SubResource("AnimationLibrary_tbgi4")
 }
+speed_scale = 0.148
 
 [node name="Stone" parent="." instance=ExtResource("3_sugp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.5718517, 0)
+bounces = 1
 
 [node name="WaterCollision" parent="." instance=ExtResource("7_o6xl0")]
 transform = Transform3D(200, 0, 0, 0, 200, 0, 0, 0, 200, 0, -0.5, 0)

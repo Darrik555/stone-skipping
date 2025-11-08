@@ -10,7 +10,8 @@ func Enter():
 	#disable collision
 	#maybe only disable collision with water (the specific collision layer)
 	stone_controller.get_node("CollisionShape3D").disabled = true
-	
+	#splash effect
+	$"../../../Ocean".add_ripple(stone_controller.global_position,3.0,4.0)
 	#start timer, despawn/reset
 	
 	#print("Sunk")
