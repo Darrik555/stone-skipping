@@ -1,0 +1,19 @@
+extends CanvasLayer
+
+@export var all_throwables: ResourceGroup
+
+@onready var player: Player = %Player
+@onready var inventory_panel: InventoryUI = %InventoryPanel
+@onready var shop_panel: ShopPanel = %ShopPanel
+
+var _all_throwables: Array[Throwable] = []
+
+func _ready():
+	all_throwables.load_all_into(_all_throwables)
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_released("Shop"):
+		shop_panel.open(_all_throwables, player.throwableInventory, 500) #HARDCODE
+
+func _process(_delta: float) -> void:
+	inventory_panel.reload(player.throwableInventory)

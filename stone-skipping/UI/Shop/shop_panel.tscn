@@ -1,0 +1,68 @@
+[gd_scene load_steps=3 format=3 uid="uid://dm4jts7isf7mw"]
+
+[ext_resource type="Script" uid="uid://dppvwvycssph8" path="res://UI/Shop/shop_panel.gd" id="1_cuqn1"]
+[ext_resource type="PackedScene" uid="uid://d2lqm75qnwdo0" path="res://UI/Shop/ItemGrid/item_grid.tscn" id="2_psdc3"]
+
+[node name="ShopPanel" type="PanelContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cuqn1")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="ShopLabel" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 0
+text = "Shop"
+horizontal_alignment = 1
+
+[node name="CloseButton" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = " X"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer2/VBoxContainer"]
+layout_mode = 2
+text = "Throwables"
+
+[node name="ThrowableList" type="ItemList" parent="VBoxContainer/HBoxContainer2/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer2/VBoxContainer2"]
+layout_mode = 2
+
+[node name="ThrowableContainer" parent="VBoxContainer/HBoxContainer2/VBoxContainer2" instance=ExtResource("2_psdc3")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="BuyButton" type="Button" parent="VBoxContainer/HBoxContainer2/VBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 10
+text = "Buy"
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/CloseButton" to="." method="_on_close_button_pressed"]
+[connection signal="item_selected" from="VBoxContainer/HBoxContainer2/VBoxContainer/ThrowableList" to="." method="_on_throwable_list_item_selected"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer2/VBoxContainer2/BuyButton" to="." method="_on_buy_button_pressed"]

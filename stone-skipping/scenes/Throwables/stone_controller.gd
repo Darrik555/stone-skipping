@@ -13,6 +13,7 @@ func _ready():
 	#start speed
 	#velocity = Vector3(25.0, 3.0, 0.0)
 	#maybe angle of throw
+	#set_collision_layer_value(5, false)
 	pass
 
 func _physics_process(_delta: float) -> void:

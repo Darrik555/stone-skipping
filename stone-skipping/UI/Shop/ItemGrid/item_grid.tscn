@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://d2lqm75qnwdo0"]
+
+[ext_resource type="Script" uid="uid://cjj8qona1ffe3" path="res://UI/Shop/ItemGrid/item_grid.gd" id="1_00wg0"]
+[ext_resource type="PackedScene" uid="uid://bisfi3mivloah" path="res://UI/Inventory/item_slot.tscn" id="2_15uey"]
+
+[node name="ItemGrid" type="GridContainer"]
+script = ExtResource("1_00wg0")
+slot_scene = ExtResource("2_15uey")

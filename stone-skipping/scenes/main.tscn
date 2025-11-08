@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://nfhf0unrgqo"]
+[gd_scene load_steps=16 format=3 uid="uid://nfhf0unrgqo"]
 
 [ext_resource type="Script" uid="uid://cf5ye8wk8rycs" path="res://Scenes/main.gd" id="1_21xkr"]
 [ext_resource type="Resource" uid="uid://bh00g0gbp7rxo" path="res://Resources/Throwables/Scenes/standard_stone.tres" id="2_6bp64"]
@@ -7,7 +7,10 @@
 [ext_resource type="PackedScene" uid="uid://vpiob60nyvfh" path="res://Scenes/Player/player.tscn" id="7_6bp64"]
 [ext_resource type="PackedScene" uid="uid://db57rtpebk5g4" path="res://Scenes/water/water_collision.tscn" id="7_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://bjsu0bu5gjesp" path="res://water/ocean.tscn" id="7_tipki"]
-[ext_resource type="PackedScene" uid="uid://cy0lymaksn5vq" path="res://UI/Inventory/inventory.tscn" id="8_344ge"]
+[ext_resource type="PackedScene" uid="uid://cy0lymaksn5vq" path="res://UI/Inventory/inventory_panel.tscn" id="8_344ge"]
+[ext_resource type="Script" uid="uid://k4etsww3bk2h" path="res://Scenes/ui.gd" id="8_hptm8"]
+[ext_resource type="Resource" uid="uid://bvjtj8geinipg" path="res://Resources/Throwables/all_throwables.tres" id="9_d1ilt"]
+[ext_resource type="PackedScene" uid="uid://dm4jts7isf7mw" path="res://UI/Shop/shop_panel.tscn" id="10_d1ilt"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0wfyh"]
 sky_top_color = Color(0.46720594, 0.54082817, 0.8862413, 1)
@@ -63,11 +66,8 @@ script = ExtResource("4_tbgi4")
 
 [node name="WaterCollision" parent="." instance=ExtResource("7_o6xl0")]
 transform = Transform3D(200, 0, 0, 0, 200, 0, 0, 0, 200, 0, -0.5, 0)
+collision_layer = 129
 collision_mask = 129
-
-[node name="StonesCube001" type="MeshInstance3D" parent="."]
-transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 14.99712, 11.982663, 33.48115)
-mesh = ExtResource("6_tefeu")
 
 [node name="StonesCube002" type="MeshInstance3D" parent="."]
 transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 786.35657, 11.982663, -27.42101)
@@ -75,11 +75,39 @@ mesh = ExtResource("6_tefeu")
 
 [node name="Player" parent="." node_paths=PackedStringArray("progress_bar", "camera_3d") instance=ExtResource("7_6bp64")]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 progress_bar = NodePath("../UI/ProgressBar")
 camera_3d = NodePath("../Camera3D")
+throwable = ExtResource("2_6bp64")
 
 [node name="UI" type="CanvasLayer" parent="."]
+script = ExtResource("8_hptm8")
+all_throwables = ExtResource("9_d1ilt")
+
+[node name="InventoryPanel" parent="UI" instance=ExtResource("8_344ge")]
+unique_name_in_owner = true
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+offset_left = -79.0
+offset_top = -27.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="ShopPanel" parent="UI" instance=ExtResource("10_d1ilt")]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -438.0
+offset_top = -360.0
+offset_right = 479.0
+offset_bottom = 317.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
 [node name="ProgressBar" type="ProgressBar" parent="UI"]
 anchors_preset = 6
@@ -96,11 +124,17 @@ size_flags_horizontal = 8
 fill_mode = 3
 show_percentage = false
 
-[node name="Inventory" parent="UI" instance=ExtResource("8_344ge")]
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-offset_left = -75.0
-offset_top = -27.0
-grow_horizontal = 0
-grow_vertical = 0
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+use_collision = true
+size = Vector3(100, 0.1, 4)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.5)
+use_collision = true
+size = Vector3(100, 3, 1)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.5)
+use_collision = true
+size = Vector3(100, 3, 1)

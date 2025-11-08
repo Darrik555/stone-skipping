@@ -10,15 +10,40 @@ extends CharacterBody3D
 var throw_power : float = 0.0
 var throw_direction : Vector3 = Vector3(1,0.1,1)
 var charging : bool = true
+var is_input_active: bool = false
 
-var inventory: Inventory = Inventory.new()
+var throwableInventory: ThrowableInventory = ThrowableInventory.new()
 
-func on_throwable_item_bought(throwable: Throwable):
-	inventory.add_throwable(throwable)
-	
+#for convenience
+@export var throwable: Throwable
 
-func _process(_delta):
-	if Input.is_action_pressed("leftclick"):
+func _ready():
+	throwableInventory.add_throwable(throwable)
+	throwableInventory.add_throwable(throwable)
+#for convenience end
+
+func consume_throwable() -> bool:
+	if throwableInventory.get_length() > 0:
+		throwableInventory.remove_throwable(throwableInventory.get_throwables()[0])
+		#print("Stones ", throwableInventory.get_length())
+		return true
+	return false
+
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("leftclick"):
+		if throwableInventory.get_length() <= 0:
+			return
+		
+		is_input_active = true
+		throw_power = 0.0
+	elif event.is_action_released("leftclick"):
+		if is_input_active:
+			throw()
+		is_input_active = false
+
+func _process(delta):
+	if is_input_active:
 		#start_throw()
 		#start power bar, 
 		#when mousebutton released, pick number from power bar
@@ -28,31 +53,35 @@ func _process(_delta):
 		elif throw_power <= 0.0:
 			charging = true
 		
+		var charge_rate = progress_bar.max_value * delta
+		
 		if charging:
-			throw_power += 100 * _delta
+			throw_power += charge_rate
 		else:
-			throw_power -= 100 * _delta
+			throw_power -= charge_rate
 		
 		progress_bar.value = throw_power
-	
-	if Input.is_action_just_released("leftclick"):
-		throw()
-	pass
+
 
 func throw():
 	
-	var stone = $"../Stone"
-	
-	throw_direction = camera_3d.global_position.direction_to(stone.global_position)
-	throw_direction.y = -throw_direction.y * 0.2
-	
-	stone.global_position = global_position
-	
-	stone.velocity = throw_power * throw_direction
-	stone.stats.bounces = stone.stats.max_bounces
-	stone.get_node("CollisionShape3D").disabled = false
-	stone.get_node("State Machine").reset()
+	if throwableInventory.get_length() > 0:
+		animation_player.play("arm_throw")
+		
+		#throw_direction = camera_3d.global_position.direction_to(stone.global_position)
+		#throw_direction.y = -throw_direction.y * 0.2
+		var forward_vector = -camera_3d.global_transform.basis.z.normalized()
+		var throw_direction = (forward_vector + Vector3(0, 0.2, 0)).normalized()
+		get_parent().start_new_throw(throw_power, throw_direction, self)
+		#stone.global_position = global_position
+		
+		#stone.velocity = throw_power * throw_direction
+		#stone.stats.bounces = stone.stats.max_bounces
+		#stone.get_node("CollisionShape3D").disabled = false
+		#stone.get_node("State Machine").reset()
 	
 	#reset stuff
 	progress_bar.value = 0.0
 	throw_power = 0.0
+	charging = true
+	is_input_active = false

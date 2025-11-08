@@ -1,9 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://cy0lymaksn5vq"]
+[gd_scene load_steps=4 format=3 uid="uid://cy0lymaksn5vq"]
 
-[ext_resource type="Script" uid="uid://06tfu8tqwp6y" path="res://UI/Inventory/inventory.gd" id="1_ym3yg"]
+[ext_resource type="Script" uid="uid://06tfu8tqwp6y" path="res://UI/Inventory/inventory_panel.gd" id="1_ym3yg"]
 [ext_resource type="PackedScene" uid="uid://bisfi3mivloah" path="res://UI/Inventory/item_slot.tscn" id="2_k5s52"]
+[ext_resource type="PackedScene" uid="uid://d2lqm75qnwdo0" path="res://UI/Shop/ItemGrid/item_grid.tscn" id="3_0tksl"]
 
-[node name="Inventory" type="PanelContainer"]
+[node name="InventoryPanel" type="PanelContainer"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -28,6 +29,6 @@ text = "Inventory"
 horizontal_alignment = 2
 vertical_alignment = 2
 
-[node name="GridContainer" type="GridContainer" parent="VBoxContainer"]
+[node name="GridContainer" parent="VBoxContainer/HBoxContainer" instance=ExtResource("3_0tksl")]
 unique_name_in_owner = true
 layout_mode = 2

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ResourceGroup" load_steps=2 format=3 uid="uid://bvjtj8geinipg"]
+
+[ext_resource type="Script" uid="uid://ccrh4b4qxofbo" path="res://addons/godot_resource_groups/resource_group.gd" id="1_uw8ui"]
+
+[resource]
+script = ExtResource("1_uw8ui")
+base_folder = "res://Resources/Throwables/Scenes"
+includes = Array[String](["*.tres"])
+paths = Array[String](["res://Resources/Throwables/Scenes/standard_stone.tres"])
+metadata/_custom_type_script = "uid://ccrh4b4qxofbo"
