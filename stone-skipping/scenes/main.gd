@@ -1,6 +1,6 @@
 extends Node3D
 
-@export var throwable: Throwable
+@export var throwable: Item
 
 @onready var camera_3d: Camera3D = $Camera3D
 

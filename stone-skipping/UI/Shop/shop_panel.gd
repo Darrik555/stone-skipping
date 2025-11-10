@@ -7,20 +7,20 @@ extends PanelContainer
 @onready var throwable_container: ItemGrid = %ThrowableContainer
 @onready var buy_button: Button = %BuyButton
 
-var _throwableInventory: ThrowableInventory
+var _inventory: Inventory
 var _currency: int
-var _selected_item: Throwable
+var _selected_item: Item
 
-func open(throwables: Array[Throwable], throwableInventory: ThrowableInventory, currency: int):
-	_throwableInventory = throwableInventory
+func open(items: Array[Item], inventory: Inventory, currency: int):
+	_inventory = inventory
 	_currency = currency
 	show()
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	
 	throwable_list.clear()
-	for throwable in throwables:
-		var index = throwable_list.add_item(throwable.name)
-		throwable_list.set_item_metadata(index, throwable)
+	for item in items:
+		var index = throwable_list.add_item(item.name)
+		throwable_list.set_item_metadata(index, item)
 	
 	throwable_list.select(0)
 	_on_throwable_list_item_selected(0)
@@ -38,5 +38,5 @@ func _on_close_button_pressed() -> void:
 
 
 func _on_buy_button_pressed() -> void:
-	if _selected_item.price <= _currency and len(_throwableInventory.get_throwables()) < 5:
-		_throwableInventory.add_throwable(_selected_item)
+	if _selected_item.price <= _currency and len(_inventory.get_items()) < 5:
+		_inventory.add_item(_selected_item)

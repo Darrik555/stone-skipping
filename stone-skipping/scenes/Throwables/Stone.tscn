@@ -1,12 +1,12 @@
 [gd_scene load_steps=9 format=3 uid="uid://o0p7ive0n0yo"]
 
-[ext_resource type="Script" uid="uid://b34qudkehtjxj" path="res://scenes/Throwables/stone_controller.gd" id="1_6dcfr"]
+[ext_resource type="Script" uid="uid://b34qudkehtjxj" path="res://Scenes/Throwables/stone_controller.gd" id="1_6dcfr"]
 [ext_resource type="ArrayMesh" uid="uid://dh3fyo3fsboqj" path="res://Art/Throwables/Stones/stones_Circle.res" id="1_i5bm8"]
 [ext_resource type="Resource" uid="uid://ivp6x680nrbp" path="res://Resources/Throwables/Stats/standard_stone.tres" id="2_floys"]
-[ext_resource type="Script" uid="uid://pwmm4clupd7k" path="res://scenes/Throwables/States/State_Machine.gd" id="2_m47l4"]
-[ext_resource type="Script" uid="uid://c665ellk2mlib" path="res://scenes/Throwables/States/Stone_Bounce.gd" id="4_l0ttt"]
-[ext_resource type="Script" uid="uid://dpwjayvjvtqcd" path="res://scenes/Throwables/States/Stone_InAir.gd" id="5_w6vg2"]
-[ext_resource type="Script" uid="uid://cxp5lkrnswp78" path="res://scenes/Throwables/States/Stone_Sunk.gd" id="7_w6vg2"]
+[ext_resource type="Script" uid="uid://pwmm4clupd7k" path="res://Scenes/Throwables/States/State_Machine.gd" id="2_m47l4"]
+[ext_resource type="Script" uid="uid://c665ellk2mlib" path="res://Scenes/Throwables/States/Stone_Bounce.gd" id="4_l0ttt"]
+[ext_resource type="Script" uid="uid://dpwjayvjvtqcd" path="res://Scenes/Throwables/States/Stone_InAir.gd" id="5_w6vg2"]
+[ext_resource type="Script" uid="uid://cxp5lkrnswp78" path="res://Scenes/Throwables/States/Stone_Sunk.gd" id="7_w6vg2"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_floys"]
 height = 0.5

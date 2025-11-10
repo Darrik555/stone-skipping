@@ -5,6 +5,6 @@ extends PanelContainer
 
 @onready var grid_container: ItemGrid = %GridContainer
 
-func reload(throwableInventory: ThrowableInventory):
+func reload(inventory: Inventory):
 	#show()
-	grid_container.display(throwableInventory.get_throwables())
+	grid_container.display(inventory.get_items())

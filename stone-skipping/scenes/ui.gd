@@ -6,7 +6,7 @@ extends CanvasLayer
 @onready var inventory_panel: InventoryUI = %InventoryPanel
 @onready var shop_panel: ShopPanel = %ShopPanel
 
-var _all_throwables: Array[Throwable] = []
+var _all_throwables: Array[Item] = []
 
 func _ready():
 	all_throwables.load_all_into(_all_throwables)

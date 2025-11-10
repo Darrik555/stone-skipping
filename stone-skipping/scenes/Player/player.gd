@@ -12,19 +12,19 @@ var throw_direction : Vector3 = Vector3(1,0.1,1)
 var charging : bool = true
 var is_input_active: bool = false
 
-var throwableInventory: ThrowableInventory = ThrowableInventory.new()
+var throwableInventory: Inventory = Inventory.new()
 
 #for convenience
-@export var throwable: Throwable
+@export var throwable: Item
 
 func _ready():
-	throwableInventory.add_throwable(throwable)
-	throwableInventory.add_throwable(throwable)
+	throwableInventory.add_item(throwable)
+	throwableInventory.add_item(throwable)
 #for convenience end
 
 func consume_throwable() -> bool:
 	if throwableInventory.get_length() > 0:
-		throwableInventory.remove_throwable(throwableInventory.get_throwables()[0])
+		throwableInventory.remove_item(throwableInventory.get_items()[0])
 		#print("Stones ", throwableInventory.get_length())
 		return true
 	return false
