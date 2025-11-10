@@ -10,6 +10,7 @@ var has_hit_water: bool = false
 var collision : KinematicCollision3D
 
 func _ready():
+	stats.bounces = stats.max_bounces
 	#start speed
 	#velocity = Vector3(25.0, 3.0, 0.0)
 	#maybe angle of throw

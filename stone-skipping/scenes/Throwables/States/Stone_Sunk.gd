@@ -6,10 +6,10 @@ var stone_controller: CharacterBody3D
 func Enter():
 	if get_parent() and get_parent().get_parent():
 		stone_controller = get_parent().get_parent()
-	
+	print("entered Sunk state")
 	#disable collision
 	#maybe only disable collision with water (the specific collision layer)
-	#stone_controller.get_node("CollisionShape3D").disabled = true
+	stone_controller.get_node("CollisionShape3D").disabled = true
 	#splash effect
 	$"../../../Ocean".add_ripple(stone_controller.global_position,3.0,4.0)
 	#start timer, despawn/reset

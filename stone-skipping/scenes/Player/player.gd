@@ -71,7 +71,7 @@ func throw():
 		#throw_direction = camera_3d.global_position.direction_to(stone.global_position)
 		#throw_direction.y = -throw_direction.y * 0.2
 		var forward_vector = -camera_3d.global_transform.basis.z.normalized()
-		var throw_direction = (forward_vector + Vector3(0, 0.2, 0)).normalized()
+		throw_direction = (forward_vector + Vector3(0, 0.2, 0)).normalized()
 		get_parent().start_new_throw(throw_power, throw_direction, self)
 		#stone.global_position = global_position
 		

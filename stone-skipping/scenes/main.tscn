@@ -1,16 +1,21 @@
-[gd_scene load_steps=16 format=3 uid="uid://nfhf0unrgqo"]
+[gd_scene load_steps=21 format=3 uid="uid://nfhf0unrgqo"]
 
-[ext_resource type="Script" uid="uid://cf5ye8wk8rycs" path="res://Scenes/main.gd" id="1_21xkr"]
+[ext_resource type="Script" uid="uid://cf5ye8wk8rycs" path="res://scenes/main.gd" id="1_21xkr"]
 [ext_resource type="Resource" uid="uid://bh00g0gbp7rxo" path="res://Resources/Throwables/Scenes/standard_stone.tres" id="2_6bp64"]
-[ext_resource type="Script" uid="uid://bswr33s48jv7n" path="res://Scenes/Throwables/follow_camera.gd" id="4_tbgi4"]
+[ext_resource type="Script" uid="uid://bswr33s48jv7n" path="res://scenes/Throwables/follow_camera.gd" id="4_tbgi4"]
 [ext_resource type="ArrayMesh" uid="uid://l6kokqp7xi6f" path="res://Art/Throwables/Stones/stones_Cube_001.res" id="6_tefeu"]
-[ext_resource type="PackedScene" uid="uid://vpiob60nyvfh" path="res://Scenes/Player/player.tscn" id="7_6bp64"]
-[ext_resource type="PackedScene" uid="uid://db57rtpebk5g4" path="res://Scenes/water/water_collision.tscn" id="7_o6xl0"]
+[ext_resource type="PackedScene" uid="uid://vpiob60nyvfh" path="res://scenes/Player/player.tscn" id="7_6bp64"]
+[ext_resource type="PackedScene" uid="uid://db57rtpebk5g4" path="res://scenes/Water/water_collision.tscn" id="7_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://bjsu0bu5gjesp" path="res://water/ocean.tscn" id="7_tipki"]
 [ext_resource type="PackedScene" uid="uid://cy0lymaksn5vq" path="res://UI/Inventory/inventory_panel.tscn" id="8_344ge"]
-[ext_resource type="Script" uid="uid://k4etsww3bk2h" path="res://Scenes/ui.gd" id="8_hptm8"]
+[ext_resource type="Script" uid="uid://k4etsww3bk2h" path="res://scenes/ui.gd" id="8_hptm8"]
 [ext_resource type="Resource" uid="uid://bvjtj8geinipg" path="res://Resources/Throwables/all_throwables.tres" id="9_d1ilt"]
 [ext_resource type="PackedScene" uid="uid://dm4jts7isf7mw" path="res://UI/Shop/shop_panel.tscn" id="10_d1ilt"]
+[ext_resource type="ArrayMesh" uid="uid://j8kdghkclesf" path="res://Art/Environment/props/Tree.res" id="12_jbj1t"]
+[ext_resource type="ArrayMesh" uid="uid://btlxgldes40hs" path="res://Art/Environment/props/Tree_2.res" id="13_muem4"]
+[ext_resource type="ArrayMesh" uid="uid://02f52a8egeyl" path="res://Art/Environment/props/Rock_4.res" id="14_dp3eg"]
+[ext_resource type="ArrayMesh" uid="uid://b8ruw5l1xgonm" path="res://Art/Environment/props/Rock_2.res" id="15_0ld40"]
+[ext_resource type="ArrayMesh" uid="uid://c1mhd74y7cim7" path="res://Art/Environment/props/Rock.res" id="16_gqmmt"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0wfyh"]
 sky_top_color = Color(0.46720594, 0.54082817, 0.8862413, 1)
@@ -138,3 +143,23 @@ size = Vector3(100, 3, 1)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.5)
 use_collision = true
 size = Vector3(100, 3, 1)
+
+[node name="Tree" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1149049, 1.0875591, -21.571957)
+mesh = ExtResource("12_jbj1t")
+
+[node name="Tree2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.819004, 1.0374495, 13.8658285)
+mesh = ExtResource("13_muem4")
+
+[node name="Rock4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7972326, 1.1172459, -18.011086)
+mesh = ExtResource("14_dp3eg")
+
+[node name="Rock2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.57764, 0.8520575, -14.118382)
+mesh = ExtResource("15_0ld40")
+
+[node name="Rock" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.237581, 0.39598706, 12.156524)
+mesh = ExtResource("16_gqmmt")

@@ -5,7 +5,7 @@ var stone_controller: CharacterBody3D
 
 func Enter():
 	
-	
+	#what is this abomination
 	if get_parent() and get_parent().get_parent():
 		stone_controller = get_parent().get_parent()
 	
