@@ -7,14 +7,13 @@ func Enter():
 	if get_parent() and get_parent().get_parent():
 		stone_controller = get_parent().get_parent()
 	print("entered Sunk state")
-	#disable collision
-	#maybe only disable collision with water (the specific collision layer)
-	stone_controller.get_node("CollisionShape3D").disabled = true
+	
+	#disable water collision mask:
+	stone_controller.set_collision_mask_value(2,false)
+	
 	#splash effect
 	$"../../../Ocean".add_ripple(stone_controller.global_position,3.0,4.0)
 	#start timer, despawn/reset
-	
-	#print("Sunk")
 
 func Exit():
 	#stone_controller.get_node("CollisionShape3D").disabled = false

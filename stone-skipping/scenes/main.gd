@@ -19,6 +19,7 @@ func start_new_throw(power: float, direction: Vector3, player: Player):
 	
 	current_throwable = throwable.scene.instantiate() as CharacterBody3D
 	add_child(current_throwable)
+	current_throwable.global_position = player.global_position
 	
 	if camera_3d:
 		if camera_3d.has_method("set_target"):

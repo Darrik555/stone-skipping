@@ -32,7 +32,7 @@ func Enter():
 	stone_controller.velocity.z *= (1.0 - stone_controller.stats.friction_factor)
 	
 	
-	AudioManager.skip_sfx.pitch_scale = randf_range(0.8,1.2)
+	AudioManager.skip_sfx.pitch_scale = randf_range(1,1)
 	AudioManager.skip_sfx.play()
 	
 	#decide termination

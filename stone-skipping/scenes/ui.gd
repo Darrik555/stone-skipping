@@ -13,7 +13,12 @@ func _ready():
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_released("Shop"):
-		shop_panel.open(_all_throwables, player.throwableInventory, 500) #HARDCODE
+		if shop_panel.visible:
+			shop_panel.hide()
+		else:
+			shop_panel.open(_all_throwables, player.throwableInventory, 500) #HARDCODE
+		
+	
 
 func _process(_delta: float) -> void:
 	inventory_panel.reload(player.throwableInventory)

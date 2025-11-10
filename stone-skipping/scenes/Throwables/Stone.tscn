@@ -14,6 +14,7 @@ radius = 1.0
 
 [node name="Stone" type="CharacterBody3D" groups=["stone"]]
 collision_layer = 128
+collision_mask = 3
 script = ExtResource("1_6dcfr")
 stats = ExtResource("2_floys")
 

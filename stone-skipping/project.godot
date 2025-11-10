@@ -39,7 +39,7 @@ window/size/viewport_height=1080
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/godot_resource_groups/plugin.cfg", "res://addons/resources_spreadsheet_view/plugin.cfg")
+enabled=PackedStringArray("res://addons/godot_resource_groups/plugin.cfg", "res://addons/resources_spreadsheet_view/plugin.cfg", "res://addons/terrain_3d/plugin.cfg")
 
 [global_group]
 
@@ -64,5 +64,6 @@ Shop={
 
 [layer_names]
 
-3d_physics/layer_1="Water&Environment"
+3d_physics/layer_1="Environment"
+3d_physics/layer_2="Water"
 3d_physics/layer_8="SkippingStones"

@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://cri2nh3100qle"]
+
+[ext_resource type="ArrayMesh" uid="uid://j8kdghkclesf" path="res://Art/Environment/props/Tree.res" id="1_71j77"]
+
+[node name="TreeTestScene" type="Node3D"]
+
+[node name="Tree" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.07186282, 0, 0.7734065)
+mesh = ExtResource("1_71j77")

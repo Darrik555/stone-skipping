@@ -4,4 +4,5 @@
 
 [resource]
 script = ExtResource("1_0n3nv")
+max_bounces = 8
 metadata/_custom_type_script = "uid://csvbyxkwcxbmk"
