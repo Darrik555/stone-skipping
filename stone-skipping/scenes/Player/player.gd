@@ -25,6 +25,9 @@ var relicInventory: Inventory = Inventory.new()
 func _ready():
 	throwableInventory.add_item(throwable)
 	throwableInventory.add_item(throwable)
+	throwableInventory.add_item(throwable)
+	throwableInventory.add_item(throwable)
+	throwableInventory.add_item(throwable)
 	relicInventory.add_item(relic)
 #for convenience end
 

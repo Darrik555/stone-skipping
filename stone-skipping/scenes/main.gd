@@ -4,7 +4,6 @@ extends Node3D
 
 @onready var player: Player = %Player
 @onready var camera_3d: Camera3D = $Camera3D
-@onready var player = %Player
 
 var current_throwable: CharacterBody3D = null
 
