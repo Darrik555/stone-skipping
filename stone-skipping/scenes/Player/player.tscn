@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=4 uid="uid://vpiob60nyvfh"]
+[gd_scene load_steps=11 format=4 uid="uid://vpiob60nyvfh"]
 
-[ext_resource type="Script" uid="uid://ovytblrv4oa7" path="res://Scenes/Player/player.gd" id="1_thri5"]
+[ext_resource type="Script" uid="uid://ovytblrv4oa7" path="res://scenes/Player/player.gd" id="1_thri5"]
+[ext_resource type="Script" uid="uid://bswr33s48jv7n" path="res://scenes/Throwables/follow_camera.gd" id="2_1kbk7"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3pqjt"]
 
@@ -50,11 +51,107 @@ bind/6/pose = Transform3D(0.40295637, -0.17801599, 0.8977397, 0.89560646, -0.125
 
 [sub_resource type="Animation" id="Animation_sugp2"]
 length = 0.001
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("arm/Armature/Skeleton3D:Bone")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 6.49959e-08, -5.4945634e-08, 0.014725575, 0.9998916)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("arm/Armature/Skeleton3D:Bone.001")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, -0.022486677, 3.2543947e-05, -0.0048041698, 0.99973565)
+tracks/2/type = "rotation_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("arm/Armature/Skeleton3D:Bone.002")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, 0.08335985, -0.001010495, -0.008262605, 0.99648476)
+tracks/3/type = "rotation_3d"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("arm/Armature/Skeleton3D:Bone.004")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = PackedFloat32Array(0, 1, -0.06998928, -0.001043865, -0.01713803, 0.9974)
+tracks/4/type = "rotation_3d"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("arm/Armature/Skeleton3D:Bone.006")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = PackedFloat32Array(0, 1, -0.038955376, -5.4335434e-08, 0.023905009, 0.998955)
+tracks/5/type = "rotation_3d"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("arm/Armature/Skeleton3D:Bone.003")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = PackedFloat32Array(0, 1, 0.016087813, -0.009751094, -0.8047799, 0.59327525)
+tracks/6/type = "rotation_3d"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("arm/Armature/Skeleton3D:Bone.005")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = PackedFloat32Array(0, 1, -0.11406206, 4.1116225e-05, 0.349283, 0.93004906)
 
 [sub_resource type="Animation" id="Animation_0wfyh"]
 resource_name = "arm_throw"
-length = 2.0
-loop_mode = 1
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("arm/Armature/Skeleton3D:Bone")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 6.853279e-08, -5.0465275e-08, 0.08171662, 0.9966556, 0.7, 1, 3.5045517e-08, -7.755836e-08, -0.4167529, 0.9090198, 1, 1, 6.853279e-08, -5.0465275e-08, 0.08171662, 0.9966556)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("arm/Armature/Skeleton3D:Bone.001")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, -0.022346511, 0.0025071087, -0.114801124, 0.99313396, 0.7, 1, -0.01979705, 0.01066439, -0.47708914, 0.8785672, 1, 1, -0.022346511, 0.0025071087, -0.114801124, 0.99313396)
+tracks/2/type = "rotation_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("arm/Armature/Skeleton3D:Bone.002")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, 0.08335985, -0.001010495, -0.008262605, 0.99648476, 0.7, 1, 0.07955984, -0.011796803, -0.28913102, 0.9539048, 1, 1, 0.08335985, -0.001010495, -0.008262605, 0.99648476)
+tracks/3/type = "rotation_3d"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("arm/Armature/Skeleton3D:Bone.004")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = PackedFloat32Array(0, 1, -0.06998928, -0.001043865, -0.01713803, 0.9974, 0.7, 1, -0.06998928, -0.001043865, -0.01713803, 0.9974, 1, 1, -0.06998928, -0.001043865, -0.01713803, 0.9974)
+tracks/4/type = "rotation_3d"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("arm/Armature/Skeleton3D:Bone.006")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = PackedFloat32Array(0, 1, -0.038955376, -5.436268e-08, 0.02390501, 0.9989551, 0.7, 1, -0.038955376, -5.436268e-08, 0.02390501, 0.9989551, 1, 1, -0.038955376, -5.436268e-08, 0.02390501, 0.9989551)
+tracks/5/type = "rotation_3d"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("arm/Armature/Skeleton3D:Bone.003")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = PackedFloat32Array(0, 1, 0.016087813, -0.009751094, -0.8047799, 0.59327525, 0.7, 1, 0.016087813, -0.009751094, -0.8047799, 0.59327525, 1, 1, 0.016087813, -0.009751094, -0.8047799, 0.59327525)
+tracks/6/type = "rotation_3d"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("arm/Armature/Skeleton3D:Bone.005")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = PackedFloat32Array(0, 1, -0.11406206, 4.1116225e-05, 0.349283, 0.93004906, 0.7, 1, -0.11406206, 4.1116225e-05, 0.349283, 0.93004906, 1, 1, -0.11406206, 4.1116225e-05, 0.349283, 0.93004906)
 
 [sub_resource type="Animation" id="Animation_jyhfs"]
 resource_name = "arm_throw_speed"
@@ -68,55 +165,57 @@ _data = {
 &"arm_throw_speed": SubResource("Animation_jyhfs")
 }
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_cyojo"]
+
 [node name="Player" type="CharacterBody3D"]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 script = ExtResource("1_thri5")
 
 [node name="arm" type="Node3D" parent="."]
-transform = Transform3D(-4.3711385e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, -4.3711385e-08, 0, 1, 0)
+transform = Transform3D(0.20499726, 0, -0.0010626528, 0, 0.205, 0, 0.0010626528, 0, 0.20499726, -0.4652562, 0, -0.094040036)
 
 [node name="Armature" type="Node3D" parent="arm"]
-transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0.16236258, 0.3779621, 6.0937896)
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0)
 metadata/extras = {
 "poliigon_props": {}
 }
 
 [node name="Skeleton3D" type="Skeleton3D" parent="arm/Armature"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.7373915, 2.687868, 0)
+transform = Transform3D(1, 4.656613e-10, 0, -4.656613e-10, 1, 0, 0, 0, 0.99999994, -0.938061, -0.14439824, 0)
 bones/0/name = "Bone"
 bones/0/parent = -1
 bones/0/rest = Transform3D(0.9995663, -0.029447954, -1.07965135e-07, 0.029447956, 0.99956626, -1.3159591e-07, 1.1179355e-07, 1.2835949e-07, 0.99999994, 0, 2.8535347e-08, 1.3033485e-08)
 bones/0/enabled = true
-bones/0/position = Vector3(0, 0, 0)
+bones/0/position = Vector3(0, 2.8535347e-08, 1.3033485e-08)
 bones/0/rotation = Quaternion(6.49959e-08, -5.4945634e-08, 0.014725575, 0.9998916)
-bones/0/scale = Vector3(0.99999994, 0.99999994, 0.9999999)
+bones/0/scale = Vector3(1, 0.99999994, 0.99999994)
 bones/1/name = "Bone.001"
 bones/1/parent = 0
 bones/1/rest = Transform3D(0.99995387, 0.009604335, 0.0002811303, -0.009607263, 0.99894255, 0.044961147, 0.00015098893, -0.044961773, 0.9989887, -8.044783e-09, 2.5877788, 2.527974e-08)
 bones/1/enabled = true
-bones/1/position = Vector3(-0.0003792029, 2.5746636, 2.7187747e-08)
-bones/1/rotation = Quaternion(-0.022486677, 3.2543947e-05, -0.0048041698, 0.99973565)
-bones/1/scale = Vector3(1.0000002, 1.0000001, 0.99999976)
+bones/1/position = Vector3(-8.044783e-09, 2.5877788, 2.527974e-08)
+bones/1/rotation = Quaternion(-0.022486676, 3.254395e-05, -0.0048041693, 0.9997356)
+bones/1/scale = Vector3(1, 1, 1)
 bones/2/name = "Bone.002"
 bones/2/parent = 1
 bones/2/rest = Transform3D(0.9998614, 0.016298652, -0.0033914244, -0.01663559, 0.9859657, -0.16611695, 0.0006363463, 0.16615035, 0.98610014, 2.739398e-09, 2.7770338, 1.6301783e-08)
 bones/2/enabled = true
-bones/2/position = Vector3(-7.146033e-08, 2.7770336, -6.0861936e-08)
+bones/2/position = Vector3(2.739398e-09, 2.7770338, 1.6301783e-08)
 bones/2/rotation = Quaternion(0.08335985, -0.001010495, -0.008262605, 0.99648476)
-bones/2/scale = Vector3(0.9999998, 0.99999994, 0.9999999)
+bones/2/scale = Vector3(1, 1, 0.9999999)
 bones/3/name = "Bone.004"
 bones/3/parent = 2
 bones/3/rest = Transform3D(0.9994103, 0.034333058, 0.00031665526, -0.034040824, 0.9896154, 0.13965039, 0.004481259, -0.13957882, 0.9902008, 5.820766e-10, 0.629144, 5.3645635e-08)
 bones/3/enabled = true
-bones/3/position = Vector3(-6.9758244e-08, 0.6291438, 1.3323015e-07)
+bones/3/position = Vector3(5.820766e-10, 0.629144, 5.3645635e-08)
 bones/3/rotation = Quaternion(-0.06998928, -0.001043865, -0.01713803, 0.9974)
-bones/3/scale = Vector3(0.9999998, 0.9999998, 0.99999994)
+bones/3/scale = Vector3(0.9999999, 0.99999976, 1)
 bones/4/name = "Bone.006"
 bones/4/parent = 3
 bones/4/rest = Transform3D(0.998857, -0.04776004, -0.001862565, 0.047760047, 0.995822, 0.077829316, -0.0018623483, -0.07782933, 0.9969648, -8.032657e-09, 0.79784167, -2.1136657e-08)
 bones/4/enabled = true
 bones/4/position = Vector3(-8.032657e-09, 0.79784167, -2.1136657e-08)
-bones/4/rotation = Quaternion(-0.038955376, -5.4335434e-08, 0.023905009, 0.998955)
+bones/4/rotation = Quaternion(-0.038955376, -5.436268e-08, 0.02390501, 0.9989551)
 bones/4/scale = Vector3(0.9999999, 0.99999994, 0.9999999)
 bones/5/name = "Bone.003"
 bones/5/parent = 2
@@ -144,4 +243,17 @@ metadata/extras = {
 libraries = {
 &"": SubResource("AnimationLibrary_tbgi4")
 }
-speed_scale = 0.148
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_cyojo")
+
+[node name="CameraArm" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5441047, -0.030737638)
+
+[node name="Camera3D" type="Camera3D" parent="CameraArm"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+script = ExtResource("2_1kbk7")
+
+[node name="RayCast3D" type="RayCast3D" parent="CameraArm"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5441047, 0.030737638)
+target_position = Vector3(0, 0, -1)

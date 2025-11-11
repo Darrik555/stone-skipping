@@ -6,6 +6,13 @@ extends Camera3D
 
 @export var target_node: Node3D
 
+#camera stats
+@export var camera_rotation_sensitivity : float = 0.001
+
+func _ready():
+	#target_node = %Player
+	pass
+
 func set_target(new_target: Node3D):
 	target_node = new_target
 	if is_instance_valid(target_node):

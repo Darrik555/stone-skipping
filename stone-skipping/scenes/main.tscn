@@ -1,6 +1,6 @@
 [gd_scene load_steps=17 format=3 uid="uid://nfhf0unrgqo"]
 
-[ext_resource type="Script" uid="uid://cf5ye8wk8rycs" path="res://Scenes/main.gd" id="1_21xkr"]
+[ext_resource type="Script" uid="uid://cf5ye8wk8rycs" path="res://scenes/main.gd" id="1_21xkr"]
 [ext_resource type="Resource" uid="uid://bh00g0gbp7rxo" path="res://Resources/Throwables/Scenes/standard_stone.tres" id="2_6bp64"]
 [ext_resource type="Script" uid="uid://bswr33s48jv7n" path="res://Scenes/Throwables/follow_camera.gd" id="4_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://vpiob60nyvfh" path="res://Scenes/Player/player.tscn" id="7_6bp64"]
@@ -8,10 +8,10 @@
 [ext_resource type="PackedScene" uid="uid://db57rtpebk5g4" path="res://Scenes/water/water_collision.tscn" id="7_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://bjsu0bu5gjesp" path="res://water/ocean.tscn" id="7_tipki"]
 [ext_resource type="PackedScene" uid="uid://cy0lymaksn5vq" path="res://UI/Inventory/inventory_panel.tscn" id="8_344ge"]
-[ext_resource type="Script" uid="uid://k4etsww3bk2h" path="res://Scenes/ui.gd" id="8_hptm8"]
+[ext_resource type="Script" uid="uid://k4etsww3bk2h" path="res://scenes/ui.gd" id="8_hptm8"]
 [ext_resource type="Resource" uid="uid://bvjtj8geinipg" path="res://Resources/Throwables/all_throwables.tres" id="9_d1ilt"]
 [ext_resource type="PackedScene" uid="uid://dm4jts7isf7mw" path="res://UI/Shop/shop_panel.tscn" id="10_d1ilt"]
-[ext_resource type="PackedScene" uid="uid://bkkpkyv48nqly" path="res://Scenes/terrain_3d.tscn" id="17_muem4"]
+[ext_resource type="PackedScene" uid="uid://bkkpkyv48nqly" path="res://scenes/terrain_3d.tscn" id="17_muem4"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0wfyh"]
 sky_top_color = Color(0.46720594, 0.54082817, 0.8862413, 1)
@@ -73,7 +73,7 @@ collision_mask = 130
 
 [node name="Player" parent="." node_paths=PackedStringArray("progress_bar", "camera_3d") instance=ExtResource("7_6bp64")]
 unique_name_in_owner = true
-transform = Transform3D(0, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, 0, 179.02202, 10.936256, 152.39026)
+transform = Transform3D(0, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, 0, 179.02202, 16.946442, 152.39026)
 progress_bar = NodePath("../UI/ProgressBar")
 camera_3d = NodePath("../Camera3D")
 throwable = ExtResource("2_6bp64")
