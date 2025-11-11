@@ -13,13 +13,15 @@ var charging : bool = true
 var is_input_active: bool = false
 
 var throwableInventory: Inventory = Inventory.new()
+var relicInventory: Inventory = Inventory.new()
 
 #for convenience
 @export var throwable: Item
-
+@export var relic: Item
 func _ready():
 	throwableInventory.add_item(throwable)
 	throwableInventory.add_item(throwable)
+	relicInventory.add_item(relic)
 #for convenience end
 
 func consume_throwable() -> bool:
@@ -72,7 +74,7 @@ func throw():
 		#throw_direction.y = -throw_direction.y * 0.2
 		var forward_vector = -camera_3d.global_transform.basis.z.normalized()
 		throw_direction = (forward_vector + Vector3(0, 0.2, 0)).normalized()
-		get_parent().start_new_throw(throw_power, throw_direction, self)
+		get_parent().start_new_throw(throw_power, throw_direction)
 		#stone.global_position = global_position
 		
 		#stone.velocity = throw_power * throw_direction

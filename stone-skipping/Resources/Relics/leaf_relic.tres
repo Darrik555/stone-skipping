@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="RelicLeaf" load_steps=2 format=3 uid="uid://doj8hnwxsu6be"]
+
+[ext_resource type="Script" uid="uid://xlcusahdefkv" path="res://Resources/Relics/leaf_relic.gd" id="1_q2al3"]
+
+[resource]
+script = ExtResource("1_q2al3")
+name = "Leaf"
+metadata/_custom_type_script = "uid://xlcusahdefkv"

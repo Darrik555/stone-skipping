@@ -2,6 +2,7 @@ extends Node3D
 
 @export var throwable: Item
 
+@onready var player: Player = %Player
 @onready var camera_3d: Camera3D = $Camera3D
 
 var current_throwable: CharacterBody3D = null
@@ -9,7 +10,7 @@ var current_throwable: CharacterBody3D = null
 func _ready():
 	pass
  
-func start_new_throw(power: float, direction: Vector3, player: Player):
+func start_new_throw(power: float, direction: Vector3):
 	if not player.consume_throwable():
 		#print("inv empty")
 		return
@@ -17,8 +18,14 @@ func start_new_throw(power: float, direction: Vector3, player: Player):
 	if is_instance_valid(current_throwable):
 		current_throwable.queue_free()
 	
+	
 	current_throwable = throwable.scene.instantiate() as CharacterBody3D
 	add_child(current_throwable)
+	
+	for relic in player.relicInventory.get_items():
+		if relic.has_method("apply_effect"):
+			relic.apply_effect(current_throwable)
+	
 	current_throwable.global_position = player.global_position
 	
 	if camera_3d:
