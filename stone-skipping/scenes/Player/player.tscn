@@ -169,6 +169,7 @@ _data = {
 
 [node name="Player" type="CharacterBody3D"]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+collision_layer = 0
 script = ExtResource("1_thri5")
 
 [node name="arm" type="Node3D" parent="."]
@@ -253,7 +254,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5441047, -0.030737638)
 [node name="Camera3D" type="Camera3D" parent="CameraArm"]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 script = ExtResource("2_1kbk7")
-
-[node name="RayCast3D" type="RayCast3D" parent="CameraArm"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5441047, 0.030737638)
-target_position = Vector3(0, 0, -1)
