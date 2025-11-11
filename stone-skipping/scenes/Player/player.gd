@@ -102,16 +102,8 @@ func throw():
 	if throwableInventory.get_length() > 0:
 		animation_player.play("arm_throw")
 		await animation_player.animation_finished
-		#throw_direction = camera_3d.global_position.direction_to(stone.global_position)
-		#throw_direction.y = -throw_direction.y * 0.2
-		var forward_vector = -camera_3d_player.global_transform.basis.z.normalized()
-		throw_direction = (forward_vector + Vector3(0, 0.2, 0)).normalized()
 		
-		
-		throw_direction = global_position.direction_to($CameraArm/RayCast3D.global_position+$CameraArm/RayCast3D.target_position)
-		throw_direction = throw_direction.rotated(Vector3(0,1,0),rotation.y)
-		
-		#-camera_3d_player.global_transform.basis.z.normalized()
+		throw_direction = -global_transform.basis.z
 		get_parent().start_new_throw(throw_power, throw_direction)
 		#stone.global_position = global_position
 		
