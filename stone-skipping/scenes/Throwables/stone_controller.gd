@@ -27,35 +27,28 @@ func _ready():
 func _physics_process(_delta: float) -> void:
 	has_hit_water = false
 	state_machine._physics_process(_delta)
-	
+	var h_velocity : Vector3 = Vector3(velocity.x,0,velocity.z)
+	if h_velocity.length() > 1 and !is_sunk:
+		rotate_y(_delta * velocity.length()* 10)
 	if not is_sunk:
-		#move_and_slide()
-		#maybe set water_collision to waveheight, could resolve unclean bouncing with height change
-		#lerp(water_collider.global_position.y,ocean.global_position.y+ocean.get_wave_height(global_position),1.0)
 		water_collider.global_position.y = ocean.global_position.y + ocean.get_wave_height(global_position)
 		var new_collision = move_and_collide(velocity * _delta)
 		#set player position in ocean, so offset of ripple etc., is updated
 		$"../Ocean".set_player_position(global_position)
 		
-		
-		#print($WaterCollision.global_position.y)
-		
 		if new_collision != null:
 			collision = new_collision
 			notify_water_hit()
+			print(collision)
 		
-		#var waveheight :float = $"../Ocean".get_wave_height(global_position)
-		#if waveheight+stone_thickness >= global_position.y:
-			##collision at global_position
-			#collision_pos = global_position
-			#
-			#notify_water_hit()
 
 func notify_water_hit():
 	if not is_sunk:
 		has_hit_water = true
 		#test ripple, position/radius/strength
-		$"../Ocean".add_wave(global_position,0.3,1.0)
+		#$"../Ocean".add_wave(global_position,10.0,1.0)
+		$"../Ocean".add_ripple(global_position,1,1.0)
+		print("water hit")
 
 func on_state_transition(new_state: String):
 	if new_state == "Sunk":

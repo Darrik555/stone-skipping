@@ -40,6 +40,7 @@ func Enter():
 	
 	#decide termination
 	stone_controller.stats.bounces -= 1
+	stone_controller.has_hit_water = false
 	#print("Bounced, bounces left: ",stone_controller.bounces)
 	if stone_controller.stats.bounces <= 0:
 		Transitioned.emit(self,"Sunk")

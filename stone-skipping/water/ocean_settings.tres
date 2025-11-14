@@ -10,6 +10,7 @@ simulation_frameskip = 1
 heightmap_sync_frameskip = 2
 fft_resolution = 64
 time_scale = 0.6
+cascade_ranges = Array[Vector2]([Vector2(0, 0.1), Vector2(0.03, 0.1), Vector2(0.15, 0.1)])
 planetary_curve_strength = null
 choppiness = 4.0
 metadata/_custom_type_script = "uid://cx3twtm5gessr"

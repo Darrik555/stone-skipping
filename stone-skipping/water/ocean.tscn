@@ -26,7 +26,8 @@ script = ExtResource("5_m7ah3")
 texture_resolution = Vector2i(2048, 2048)
 texture_size = Vector2(256, 256)
 water_material = ExtResource("5_2g7bk")
-damp = 0.025
+damp = 0.0
+c2 = 0.5
 
 [node name="WaterFoam" type="Node" parent="."]
 script = ExtResource("7_hkljq")
