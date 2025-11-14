@@ -206,6 +206,7 @@ func _render_process(with_next_texture, wave_point, tex_resolution, _tex_size):
 	rd.compute_list_dispatch(compute_list, x_groups, y_groups, 1)
 	rd.compute_list_end()
 	
+	
 
 	if use_cpu_readback:
 		frame_number += 1

@@ -77,6 +77,7 @@ unique_name_in_owner = true
 transform = Transform3D(0, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, 0, 179.02202, 11.118152, 179.22897)
 progress_bar = NodePath("../UI/ProgressBar")
 camera_3d = NodePath("../Camera3D")
+SPEED = 15.0
 throwable = ExtResource("2_6bp64")
 relic = ExtResource("7_6iyac")
 
@@ -132,21 +133,25 @@ offset_bottom = 96.5
 grow_horizontal = 0
 grow_vertical = 2
 size_flags_horizontal = 8
+max_value = 50.0
 fill_mode = 3
 show_percentage = false
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
-transform = Transform3D(0.033591226, 0, -0.99943566, 0, 1, 0, 0.99943566, 0, 0.033591226, 114.66108, 10.473238, 171.95123)
+transform = Transform3D(0.033591226, 0, -0.99943566, 0, 1, 0, 0.99943566, 0, 0.033591226, 114.66108, 7.43075, 306.03934)
+visible = false
 use_collision = true
 size = Vector3(100, 0.1, 4)
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="."]
-transform = Transform3D(0.033591226, 0, -0.99943566, 0, 1, 0, 0.99943566, 0, 0.033591226, 117.159676, 11.473238, 171.86726)
+transform = Transform3D(0.033591226, 0, -0.99943566, 0, 1, 0, 0.99943566, 0, 0.033591226, 117.159676, 8.43075, 305.95535)
+visible = false
 use_collision = true
 size = Vector3(100, 3, 1)
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="."]
-transform = Transform3D(0.033591226, 0, -0.99943566, 0, 1, 0, 0.99943566, 0, 0.033591226, 112.16249, 11.473238, 172.03522)
+transform = Transform3D(0.033591226, 0, -0.99943566, 0, 1, 0, 0.99943566, 0, 0.033591226, 112.16249, 8.43075, 306.12332)
+visible = false
 use_collision = true
 size = Vector3(100, 3, 1)
 

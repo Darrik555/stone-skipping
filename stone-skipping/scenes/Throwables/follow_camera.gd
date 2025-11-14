@@ -22,7 +22,7 @@ func get_target_position():
 	if is_instance_valid(target_node):
 		#fix velocity vector calculation, so that camera follow behind the stone
 		# (maybe take camera global_position, as it gets set behind the stone at the start of throw)
-		return target_node.global_position + (global_position - target_node.global_position).normalized() * 10.0 + Vector3(0,1,0)
+		return target_node.global_position + (global_position - target_node.global_position).normalized() * 10.0 + Vector3(0,0.3,0)
 		#return target_node.global_position - clamp((target_node.velocity * Vector3(1,0,1)),Vector3(0,0,-5),Vector3(0,0,5))# + offset
 	return global_position
 
