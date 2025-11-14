@@ -19,6 +19,8 @@ var is_input_active: bool = false
 var throwableInventory: Inventory = Inventory.new()
 var relicInventory: Inventory = Inventory.new()
 
+var current_currency: Currency = Currency.new()
+
 #for convenience
 @export var throwable: Item
 @export var relic: Item
@@ -29,6 +31,7 @@ func _ready():
 	throwableInventory.add_item(throwable)
 	throwableInventory.add_item(throwable)
 	relicInventory.add_item(relic)
+	current_currency.set_currency(50)
 #for convenience end
 
 func consume_throwable() -> bool:
