@@ -30,7 +30,8 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-AudioManager="*res://Scenes/audio_manager.tscn"
+ScoringSystem="*res://Scenes/Autoload/scoringSystem.gd"
+AudioManager="*res://Scenes/Autoload/audio_manager.tscn"
 
 [display]
 

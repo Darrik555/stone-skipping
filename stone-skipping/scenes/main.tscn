@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://nfhf0unrgqo"]
+[gd_scene load_steps=20 format=3 uid="uid://nfhf0unrgqo"]
 
 [ext_resource type="Script" uid="uid://cf5ye8wk8rycs" path="res://Scenes/main.gd" id="1_21xkr"]
 [ext_resource type="Resource" uid="uid://bh00g0gbp7rxo" path="res://Resources/Throwables/Scenes/standard_stone.tres" id="2_6bp64"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" uid="uid://k4etsww3bk2h" path="res://Scenes/ui.gd" id="8_hptm8"]
 [ext_resource type="Resource" uid="uid://bvjtj8geinipg" path="res://Resources/Throwables/all_throwables.tres" id="9_d1ilt"]
 [ext_resource type="PackedScene" uid="uid://dm4jts7isf7mw" path="res://UI/Shop/shop_panel.tscn" id="10_d1ilt"]
+[ext_resource type="PackedScene" uid="uid://ceb3id6lftv7d" path="res://UI/Score/scoring_panel.tscn" id="11_wsu2k"]
 [ext_resource type="ArrayMesh" uid="uid://3yymsmi1lng4" path="res://Art/Environment/props/Branch.res" id="12_eb6dy"]
 [ext_resource type="PackedScene" uid="uid://c0pkt7xgfcutp" path="res://UI/Currency/currency_panel.tscn" id="12_jkdf5"]
 [ext_resource type="PackedScene" uid="uid://bkkpkyv48nqly" path="res://Scenes/terrain_3d.tscn" id="17_muem4"]
@@ -106,6 +107,9 @@ offset_left = -39.5
 offset_right = 39.5
 offset_bottom = 27.0
 grow_vertical = 1
+
+[node name="ScoringPanel" parent="UI" instance=ExtResource("11_wsu2k")]
+unique_name_in_owner = true
 
 [node name="ShopPanel" parent="UI" instance=ExtResource("10_d1ilt")]
 unique_name_in_owner = true

@@ -28,7 +28,7 @@ func Enter():
 	#else:
 		#stone_controller.velocity = stone_controller.velocity.bounce(Vector3(0,1,0))
 		##stone_controller.velocity = stone_controller.velocity.bounce(stone_controller.collision_pos.normalized())
-	print("Bounced, new velocity: ",stone_controller.velocity) 
+	#print("Bounced, new velocity: ",stone_controller.velocity) 
 	# energy loss
 	stone_controller.velocity.y *= 0.8
 	stone_controller.velocity.x *= (1.0 - stone_controller.stats.friction_factor)
@@ -37,6 +37,8 @@ func Enter():
 	
 	AudioManager.skip_sfx.pitch_scale = randf_range(1,1)
 	AudioManager.skip_sfx.play()
+	
+	ScoringSystem.register_skip(stone_controller)
 	
 	#decide termination
 	stone_controller.stats.bounces -= 1

@@ -1,0 +1,46 @@
+[gd_scene load_steps=3 format=3 uid="uid://ceb3id6lftv7d"]
+
+[ext_resource type="FontFile" uid="uid://dqkq8sopkcvye" path="res://Art/Fonts/IpanemaSecco-463W.ttf" id="1_lv847"]
+[ext_resource type="Script" uid="uid://g6liso03wxng" path="res://UI/Score/scoring_panel.gd" id="1_pkmw5"]
+
+[node name="ScoringPanel" type="PanelContainer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -42.0
+offset_top = 128.0
+offset_right = 42.0
+offset_bottom = 200.0
+grow_horizontal = 2
+script = ExtResource("1_pkmw5")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="BaseScore" type="Label" parent="MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_lv847")
+theme_override_font_sizes/font_size = 32
+text = "1"
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_lv847")
+theme_override_font_sizes/font_size = 32
+text = "x"
+
+[node name="MultScore" type="Label" parent="MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_lv847")
+theme_override_font_sizes/font_size = 32
+text = "1"

@@ -39,7 +39,7 @@ func _physics_process(_delta: float) -> void:
 		if new_collision != null:
 			collision = new_collision
 			notify_water_hit()
-			print(collision)
+			#print(collision)
 		
 
 func notify_water_hit():
@@ -48,7 +48,7 @@ func notify_water_hit():
 		#test ripple, position/radius/strength
 		#$"../Ocean".add_wave(global_position,10.0,1.0)
 		$"../Ocean".add_ripple(global_position,1,1.0)
-		print("water hit")
+		#print("water hit")
 
 func on_state_transition(new_state: String):
 	if new_state == "Sunk":

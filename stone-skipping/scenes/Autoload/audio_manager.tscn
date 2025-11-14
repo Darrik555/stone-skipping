@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://djpnqhl4dx3or"]
 
-[ext_resource type="Script" uid="uid://bfviuuv4jjlv3" path="res://Scenes/audio_manager.gd" id="1_4tj6f"]
+[ext_resource type="Script" uid="uid://bfviuuv4jjlv3" path="res://Scenes/Autoload/audio_manager.gd" id="1_4tj6f"]
 [ext_resource type="AudioStream" uid="uid://dxbpsppgkwqf6" path="res://Sounds/solo-skip.wav" id="2_hhwve"]
 
 [node name="AudioManager" type="Node"]
