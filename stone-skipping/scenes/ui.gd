@@ -4,6 +4,7 @@ extends CanvasLayer
 
 @onready var player: Player = %Player
 @onready var inventory_panel: InventoryUI = %InventoryPanel
+@onready var relic_inventory_panel = %RelicInventoryPanel
 @onready var shop_panel: ShopPanel = %ShopPanel
 
 var _all_throwables: Array[Item] = []
@@ -22,3 +23,4 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func _process(_delta: float) -> void:
 	inventory_panel.reload(player.throwableInventory)
+	relic_inventory_panel.reload(player.relicInventory)

@@ -1,11 +1,11 @@
-[gd_scene load_steps=17 format=3 uid="uid://nfhf0unrgqo"]
+[gd_scene load_steps=18 format=3 uid="uid://nfhf0unrgqo"]
 
 [ext_resource type="Script" uid="uid://cf5ye8wk8rycs" path="res://scenes/main.gd" id="1_21xkr"]
 [ext_resource type="Resource" uid="uid://bh00g0gbp7rxo" path="res://Resources/Throwables/Scenes/standard_stone.tres" id="2_6bp64"]
-[ext_resource type="Script" uid="uid://bswr33s48jv7n" path="res://Scenes/Throwables/follow_camera.gd" id="4_tbgi4"]
-[ext_resource type="PackedScene" uid="uid://vpiob60nyvfh" path="res://Scenes/Player/player.tscn" id="7_6bp64"]
+[ext_resource type="Script" uid="uid://bswr33s48jv7n" path="res://scenes/Throwables/follow_camera.gd" id="4_tbgi4"]
+[ext_resource type="PackedScene" uid="uid://vpiob60nyvfh" path="res://scenes/Player/player.tscn" id="7_6bp64"]
 [ext_resource type="Resource" uid="uid://doj8hnwxsu6be" path="res://Resources/Relics/leaf_relic.tres" id="7_6iyac"]
-[ext_resource type="PackedScene" uid="uid://db57rtpebk5g4" path="res://Scenes/water/water_collision.tscn" id="7_o6xl0"]
+[ext_resource type="PackedScene" uid="uid://db57rtpebk5g4" path="res://scenes/Water/water_collision.tscn" id="7_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://bjsu0bu5gjesp" path="res://water/ocean.tscn" id="7_tipki"]
 [ext_resource type="PackedScene" uid="uid://cy0lymaksn5vq" path="res://UI/Inventory/inventory_panel.tscn" id="8_344ge"]
 [ext_resource type="Script" uid="uid://k4etsww3bk2h" path="res://scenes/ui.gd" id="8_hptm8"]
@@ -64,7 +64,7 @@ environment = SubResource("Environment_jyhfs")
 camera_attributes = SubResource("CameraAttributesPractical_tefeu")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.99983597, 0, 0.01811555, 0, 1, 0, -0.01811555, 0, 0.99983597, 178.52296, 14.517595, 158.40952)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 178.52296, 14.517595, 158.40952)
 script = ExtResource("4_tbgi4")
 
 [node name="WaterCollision" parent="." instance=ExtResource("7_o6xl0")]
@@ -93,6 +93,17 @@ offset_left = -79.0
 offset_top = -27.0
 grow_horizontal = 0
 grow_vertical = 0
+
+[node name="RelicInventoryPanel" parent="UI" instance=ExtResource("8_344ge")]
+unique_name_in_owner = true
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.0
+offset_left = -39.5
+offset_right = 39.5
+offset_bottom = 27.0
+grow_vertical = 1
 
 [node name="ShopPanel" parent="UI" instance=ExtResource("10_d1ilt")]
 unique_name_in_owner = true
@@ -140,6 +151,7 @@ use_collision = true
 size = Vector3(100, 3, 1)
 
 [node name="Terrain3D" parent="." instance=ExtResource("17_muem4")]
+collision_mode = 3
 
 [node name="OriginMark" type="Node3D" parent="."]
 

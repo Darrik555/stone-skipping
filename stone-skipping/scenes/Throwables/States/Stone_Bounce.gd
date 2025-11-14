@@ -23,9 +23,12 @@ func Enter():
 	#stone_controller.velocity.y = lift_force
 	
 	#bounce the velocity off of the (water plane) collision point
-	stone_controller.velocity = stone_controller.velocity.bounce(stone_controller.collision.get_normal())
-	
-	
+	if stone_controller.collision:
+		stone_controller.velocity = stone_controller.velocity.bounce(stone_controller.collision.get_normal())
+	#else:
+		#stone_controller.velocity = stone_controller.velocity.bounce(Vector3(0,1,0))
+		##stone_controller.velocity = stone_controller.velocity.bounce(stone_controller.collision_pos.normalized())
+	print("Bounced, new velocity: ",stone_controller.velocity) 
 	# energy loss
 	stone_controller.velocity.y *= 0.8
 	stone_controller.velocity.x *= (1.0 - stone_controller.stats.friction_factor)

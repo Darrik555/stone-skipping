@@ -86,8 +86,9 @@ func _process(delta):
 	
 	# Add the gravity.
 	if not is_on_floor():
-		pass
-		#velocity += get_gravity() * delta# * 1.5
+		
+		velocity += get_gravity() * delta# * 1.5
+		
 	
 	#player movement
 	var input_dir = Input.get_vector("move_left", "move_right", "move_forward", "move_back")
