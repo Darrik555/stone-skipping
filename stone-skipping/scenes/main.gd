@@ -28,11 +28,12 @@ func start_new_throw(power: float, direction: Vector3):
 		#print("inv empty")
 		return
 	
-	if is_instance_valid(current_throwable):
-		current_throwable.queue_free()
+	#if is_instance_valid(current_throwable):
+		##current_throwable.queue_free()
+		#pass
 	
 	
-	current_throwable = throwable.scene.instantiate() as CharacterBody3D
+	current_throwable = throwable.scene.instantiate()# as CharacterBody3D
 	add_child(current_throwable)
 	current_throwable.water_collider = $WaterCollision
 	current_throwable.ocean = $Ocean

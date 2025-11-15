@@ -17,7 +17,8 @@ func Enter():
 	$"../../../Ocean".add_wave(stone_controller.global_position,2.0,2.0)
 	#start timer, despawn/reset
 	
-	get_tree().create_timer(1).timeout.connect(stone_controller.queue_free)
+	#timer to delete stone after delay
+	#get_tree().create_timer(1).timeout.connect(stone_controller.queue_free)
 	
 
 func Exit():
