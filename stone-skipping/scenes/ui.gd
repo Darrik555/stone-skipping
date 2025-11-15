@@ -17,7 +17,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		if shop_panel.visible:
 			shop_panel.hide()
 		else:
-			shop_panel.open(_all_throwables, player.throwableInventory, player.current_currency.getCurrency())
+			shop_panel.open(_all_throwables, player.throwableInventory, player.current_currency.get_currency())
 		
 	
 
