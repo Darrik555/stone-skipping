@@ -118,6 +118,8 @@ func throw():
 		#stone.stats.bounces = stone.stats.max_bounces
 		#stone.get_node("CollisionShape3D").disabled = false
 		#stone.get_node("State Machine").reset()
+		
+		#current_currency.add_currency(1)
 	
 	#reset stuff
 	animation_player.play("RESET")

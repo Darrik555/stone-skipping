@@ -39,4 +39,5 @@ func _physics_process(delta: float) -> void:
 		rotate_toward(rotation.z,global_position.angle_to(direction),delta)
 		#figure out rotation on x axis/ rotate the camera down,
 		#rotate_toward(rotation.x,global_position.angle_to(target_node.global_position),delta)
+		rotation.x = global_position.angle_to(target_node.global_position)
 	

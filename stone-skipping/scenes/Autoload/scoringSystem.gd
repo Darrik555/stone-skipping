@@ -7,7 +7,7 @@ signal multiplier_changed(new_multiplier: float)
 var current_score: int = 0
 var skip_count: int = 0
 var score_multiplier: float = 1.0
-var base_points_per_skip: int = 100
+var base_points_per_skip: int = 5
 
 func _ready() -> void:
 	pass
@@ -20,6 +20,11 @@ func register_skip(throwable_controller: CharacterBody3D) -> void:
 	
 	var points_gained = int(base_points_per_skip * score_multiplier)
 	current_score += points_gained
+	
+	#for mult anim test
+	score_multiplier += 0.1
+	multiplier_changed.emit(score_multiplier)
+	
 	
 	print("skip %s | gained %s | total %s" % [skip_count, points_gained, current_score])
 	
